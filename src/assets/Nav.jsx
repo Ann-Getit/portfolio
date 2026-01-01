@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "../index.css";
 
@@ -12,16 +13,16 @@ const [open, setOpen] = useState(false);
 
         {/* Desktop links */}
       <ul className="nav-links desktop">
-          <li><a href="#home">Home</a></li> {/** inplaats van anchor href toch wel link to gebruiken zodat ik niet vast blijft in "project page" */}
-          <li><a href="#about">About</a></li> {/** hover voor de nav links */}
+          <li><Link to="#home">Home</Link></li> {/** inplaats van anchor href toch wel link to gebruiken zodat ik niet vast blijft in "project page" */}
+          <li><Link to="#about">About</Link></li> {/** hover voor de nav links */}
 
           <li className="dropdown">
               <span className="dropbtn">Work ▾</span>
               <ul className="dropdown-content">
-                <li><a href="/project">Projects</a></li> 
+                <li><Link to="/project">Projects</Link></li> 
              </ul>
           </li>
-          <li><a href="#contact">Contact</a></li>
+          <li><Link to="#contact">Contact</Link></li>
         </ul>
 
         {/* Hamburger voor mobiel */}
@@ -34,16 +35,16 @@ const [open, setOpen] = useState(false);
 
 {/* Mobile overlay */}
       <ul className={`nav-links mobile ${open ? "open" : ""}`}>
-        <li><a href="#home" onClick={() => setOpen(false)}>Home</a></li>
-        <li><a href="#about" onClick={() => setOpen(false)}>About</a></li>
+        <li><Link to="#home" onClick={() => setOpen(false)}>Home</Link></li>
+        <li><Link to="#about" onClick={() => setOpen(false)}>About</Link></li>
         <li className="dropdown">
           <span className="dropbtn">Work ▾ </span>
           <ul className="dropdown-content">
-        <li><a href="/project" onClick={() => setOpen(false)}>Projects</a></li>
+        <li><Link to="/project" onClick={() => setOpen(false)}>Projects</Link></li>
         </ul>
         </li>
         
-        <li><a href="#contact" onClick={() => setOpen(false)}>Contact</a></li>
+        <li><Link to="#contact" onClick={() => setOpen(false)}>Contact</Link></li>
       </ul>
 
       {/* overlay achtergrond bij mobiel */}
