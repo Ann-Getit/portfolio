@@ -5,7 +5,7 @@ je router
 je layout-skelet
 
 de plek waar je beslist welke pagina zichtbaar is*/
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
 import Project from './pages/project';
 import useScrollFade from "./useScrollFade";
@@ -20,7 +20,7 @@ function App() {
 
 
   return (
-    <BrowserRouter>
+    <Router>
      <header className="App-header fade-in">
       
     </header>
@@ -39,7 +39,7 @@ function App() {
      </Routes>
 </main> 
 
-   </BrowserRouter>
+   </Router>
   );
 } 
 
