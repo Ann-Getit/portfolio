@@ -6,8 +6,8 @@ je layout-skelet
 
 de plek waar je beslist welke pagina zichtbaar is*/
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/home';
-import Project from './pages/project';
+import Home from './pages/Home';
+import Project from './pages/Project';
 import useScrollFade from "./useScrollFade";
 import "./index.css";
 import Nav from "./assets/Nav"; 
