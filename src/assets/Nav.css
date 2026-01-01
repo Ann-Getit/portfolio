@@ -1,0 +1,417 @@
+:root { /*  http://localhost:5173/  */
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  background: linear-gradient(
+    -45deg,
+    rgb(215, 10, 82),
+    rgb(20, 13, 108),
+    rgb(177, 113, 123),
+    #f397e1,
+    rgb(185, 111, 120)
+    );
+
+  background-repeat: no-repeat; /* geen herhaling */
+  background-size: 100% 100%;   /* vult hele viewport */
+  background-attachment: fixed;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100vh;
+  color: white;
+}
+
+.nav-container {
+  /*margin: 2rem auto 2rem auto; */
+  display: flex;
+  justify-content: space-around; /* logo links, burger/menu rechts */
+  align-items: center;
+  background-color: rgba(69, 40, 40, 0.204);
+  padding: 0 1rem;
+  height: 85px;
+  width: 70%;
+  border-radius: 50px;
+  position: sticky;
+  top: 0;
+  z-index: 1005;
+  margin: 1rem auto;
+  
+}
+
+.logo {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.793);
+}
+
+.nav-links.desktop {
+display: flex;
+  gap: 2rem;
+  list-style: none;
+  
+  /*position: fixed;
+  top: 0;
+  right: 0;
+  width: 70vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.9);
+  transform: translateX(100%);
+  transition: transform .3s ease;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;*/
+}
+
+.nav-links.mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 70vw;
+  background: rgba(0,0,0,0.9);
+  flex-direction: column;
+  padding-top: 5rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 9999;
+}
+
+
+.nav-links.desktop li a {
+  color: rgba(255, 255, 255, 0.582);
+  text-decoration: none;
+
+}
+
+
+.nav-links.open {
+  transform: translateX(0);
+}
+
+
+
+.hamburger {
+  display: none;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+
+}
+
+
+
+/*.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 80vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 9998;
+}*/
+
+.nav-bar.open {
+  transform: translateX(0);
+}
+
+
+
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.582);
+  font-size: 30px;
+}
+                                                                                                                    
+/* Dropdown container dit aanpassen  */
+.dropdown {
+  position: relative; 
+}
+
+.dropbtn {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.582);
+  font-size: 30px;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(255,255,255,0.95);
+  color: black;
+  min-width: 150px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+
+
+/* Show on hover (desktop) */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Responsief: kleine schermen */
+@media (max-width: 968px) {
+
+  /* Desktop menu verbergen */
+  .nav-links.desktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links.mobile {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 84px; /* onder de nav-container */
+    right: 0;
+    width: 50vw;
+    height: 70vh;
+    background: rgba(0,0,0,0.95);
+    transform: translateX(100%);
+    transition: transform 0.3s ease; /* even de nav-links.mobile testen tijdens klikken ervan */
+    padding-top: 3rem;
+    gap: 2rem;
+    z-index: 1001;
+    list-style: none;
+  }
+
+  .nav-links.mobile.open {
+    transform: translateX(0);
+  }
+
+  .nav-links.mobile li a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+
+  .overlay {
+    position: fixed;
+    /*margin-top: -15px;*/
+    top: 100px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 80px);
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+  }
+
+
+   /*a, .dropbtn {
+    padding: 0.5rem;
+    width: 100%;
+    text-align: left;
+  }
+
+  .dropdown-content {
+    position: absolute;
+    background: transparent;
+    color: white;
+  }*/
+}
+
+/*. Desktop dropdown‐CSS
+
+Mobile dropdown‐CSS
+
+React state (dropdownOpen) voor mobile click-behavior */
+/*
+  .dropdown-content {
+    position: static;  dit zorgt ervoor dat je content geduwd worden 
+  } */
+
+
+
+.menu {
+   list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.menu li {
+  position: relative;
+  cursor: pointer;
+}
+
+
+h1 {
+  font-size: 35px;
+}
+
+
+.hero-area {
+  background-color: rgba(115, 32, 32, 0.392);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100vw;
+  height: 50vw;
+  justify-content: center;
+  padding-top: 75px;
+  margin-bottom: 10vw;
+  color: black;
+  /*flex-direction: column; onderelkaar*/
+}
+
+.top-row {
+display: flex;
+gap: 5rem;
+justify-content: center;
+}
+
+
+
+#container-bl, #container-two {
+  flex: 1;
+  max-width: 45vw;
+  height: 18vw;
+  background-color: whitesmoke;
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-50px); /* start buiten links */
+  transition: opacity 4s, transform 3s;
+
+}
+
+.slide-left.fade-in-active {
+  opacity: 1;
+  transform: translateX(0);      /* eindpositie */
+
+}
+
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(50px); /* start buiten rechts */
+  transition: opacity 4s, transform 3s;
+
+}
+
+.slide-right.fade-in-active {
+  opacity: 1;
+  transform: translateX(0);
+
+}
+
+
+
+
+.hero-area-middle {
+  display: flex;
+  width: 100vw;
+  height: 45vw;
+  background-color: rgba(115, 32, 32, 0.302);
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  margin-bottom: 10vw;
+
+}
+
+
+
+.content-box {
+  width: 40vw;
+  height: 35vw; 
+  background-color: whitesmoke;
+  
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 3s, transform 3s;
+}
+
+.fade-in.fade-in-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.content-box {
+  animation-delay: 0.3s; /* komt iets later in beeld */
+}
+
+
+
+
+
+.hero-image {
+  position: relative;
+  width: 100vw;
+  height: 50vw;
+  overflow: hidden;
+
+}
+/*.      background-position: center 50%;  */
+.hero-image::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./assets/images/colors-.jpg') no-repeat center center;
+  background-size: cover;
+  animation: subtle-zoom 8s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+/* alleen in- en uitzoomen */
+@keyframes subtle-zoom {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.10); }
+  100% { transform: scale(1); }
+}
+
+.image-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  width: 100vw;
+  height: 45vw;
+  padding: 2rem;
+}
+
+
+.hero-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 35vw;
+  background-color: black;
+}
+
+.footer-content {
+  height: 15vw;
+  width: 50vw;
+  background-color: whitesmoke;
+
+}
+
+
+/* copyright */
+#bottom {
+  text-align: center;
+  margin-top: auto;
+}
+#copyright {
+  background-color: black;
+  height: 6vw;
+}

@@ -1,0 +1,18 @@
+.page1 {
+    background-color: rgba(0, 0, 0, 0.57);
+    width: 100%;
+    height: 600px;
+}
+
+.page2 {
+    background-color: rgba(0, 0, 0, 0.57);
+    margin-top: 100px;
+    width: 100%;
+    height: 700px;
+}
+
+h1 {
+    padding-top: 15px;
+    text-align: center;
+    font-size: 40px;
+}

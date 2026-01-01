@@ -1,0 +1,682 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 0.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  background: linear-gradient(
+    -45deg,
+    rgb(215, 10, 82),
+    rgb(20, 13, 108),
+    rgb(177, 113, 123),
+    #f397e1,
+    rgb(185, 111, 120)
+    );
+
+  background-repeat: no-repeat; /* geen herhaling */
+  background-size: 100% 100%;   /* vult hele viewport */
+  background-attachment: fixed;
+}
+
+html, body {
+  margin: 0; 
+  min-height: 100vh;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+
+.nav-container {
+  /*margin: 2rem auto 2rem auto; */
+  display: flex;
+  justify-content: space-around; /* logo links, burger/menu rechts */
+  align-items: center;
+  background-color: rgba(69, 40, 40, 0.204);
+  padding: 0 1rem;
+  height: 85px;
+  width: 70%;
+  border-radius: 50px;
+  position: sticky;
+  top: 1rem;
+  z-index: 1005;
+  margin: 1rem auto;
+  
+}
+
+.logo {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.793);
+}
+
+.nav-links.desktop {
+display: flex;
+  gap: 2rem;
+  list-style: none;
+
+}
+
+.nav-links.mobile {
+  display: flex;
+  position: fixed;
+  top: 85px;
+  right: 0;
+  height: 100vh;
+  width: 70vw;
+   height: calc(100vh - 85px);
+  background: rgba(0,0,0,0.9);
+  flex-direction: column;
+  padding-top: 3rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 9999;
+}
+
+
+.nav-links.desktop li a {
+  color: rgba(255, 255, 255, 0.582);
+  text-decoration: none;
+
+}
+.hamburger {
+  
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  border: solid 1px white;
+  padding: 0.3rem 0.3rem 0.9rem 0.3rem;  /* verticale & horizontale ruimte rond de icon */
+  border-radius: 10px;
+}
+
+
+.nav-bar.open {
+  transform: translateX(0);
+}
+
+
+
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.582);
+  font-size: 30px;
+}
+                                                                                                                    
+/* Dropdown container dit aanpassen  */
+.dropdown {
+  position: relative; 
+ 
+}
+
+.dropbtn {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.582);
+  font-size: 30px;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: black;
+  height: 45px;
+  padding-top: 15px;
+  margin-top: 5px;
+  min-width: 150px;
+  border-radius: 5px;
+  z-index: 1000;
+
+}
+
+
+
+/* Show on hover (desktop) */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Responsief: kleine schermen */
+@media (max-width: 968px) {
+
+  /* Desktop menu verbergen */
+  .nav-links.desktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links.mobile {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: calc(85px + 1rem); /* onder de nav-container */
+    right: 0;
+    width: 50vw;
+    height: calc(100vh - 85px - 1rem);
+    background: rgba(0, 0, 0, 0.855);
+    transform: translateX(100%);
+    transition: transform 0.3s ease; /* even de nav-links.mobile testen tijdens klikken ervan */
+    padding-top: 3rem;
+    margin: 0;
+    gap: 2rem;
+    z-index: 1001;
+    list-style: none;
+  }
+
+  .nav-links.mobile.open {
+    transform: translateX(0);
+  }
+
+  .nav-links.mobile li a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+/*
+  .dropdown-content {
+    display: none;
+    position: absolute;
+  }
+  .dropdown.open .dropdown-content {
+    display: block;
+  }*/
+
+
+  .overlay {
+    position: fixed;
+    /*margin-top: -15px;*/
+    top: calc(85px + 1rem);
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 85px - 1rem);
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+  }
+}
+
+   /*a, .dropbtn {
+    padding: 0.5rem;
+    width: 100%;
+    text-align: left;
+  }
+
+  .dropdown-content {
+    position: absolute;
+    background: transparent;
+    color: white;
+  }*/
+
+
+/*. Desktop dropdown‐CSS
+
+Mobile dropdown‐CSS
+
+React state (dropdownOpen) voor mobile click-behavior */
+/*
+  .dropdown-content {
+    position: static;  dit zorgt ervoor dat je content geduwd worden 
+  } */
+
+
+
+.menu {
+   list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.menu li {
+  position: relative;
+  cursor: pointer;
+}
+
+
+h1 {
+  font-size: 35px;
+}
+
+.hero-area {
+  background-color: ; /* background -----*/
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100vw;
+  min-height: 55vw;
+  height: auto;
+  justify-content: center;
+  padding-top: 10px; /* change position containers content*/
+  margin-bottom: 10vw;
+  color: black;
+  /*flex-direction: column; onderelkaar*/
+}
+
+.top-row {
+display: flex;
+gap: 5rem;
+justify-content: center;
+}
+
+
+
+
+#container-bl, #container-two {
+  flex: 1;
+  width: auto;
+  height: auto;
+  box-sizing: border-box;
+  margin-bottom: 35px;
+  font-size: 50px;
+  color: whitesmoke;
+  margin-left: 40px;
+  position: relative;
+  display: inline-block;
+  color: whitesmoke;
+}
+
+
+.wave p {
+transition: color 1.4s ease, transform 1.4s ease;
+  transform: translateX(-6px);
+}
+
+.wave:hover p {
+  color: blue;
+   transform: translateX(0);
+}
+
+p {
+  margin: 15px 0;
+  line-height: 1.4; /* standaard ~1.5, lager = dichter op elkaar */
+}
+
+  .bruno-ace-sc-regular, #container-bl, #container-two { /* hier teksten aanpassen */
+  font-family: "Bruno Ace SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  /*font-size: 30px;*/
+  }
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-50px); /* start buiten links */
+  transition: opacity 4s, transform 3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-left.fade-in-active {
+  opacity: 1;
+  transform: translateX(0);      /* eindpositie */
+
+}
+
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(50px); /* start buiten rechts */
+  transition: opacity 4s, transform 3s;
+  
+}
+
+.slide-right.fade-in-active {
+  opacity: 1;
+  transform: translateX(0);
+
+}
+
+.image-dev img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* voorkomt “gerekte strook” look */
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out;
+  backface-visibility: hidden;
+  border-radius: 10px;
+
+}
+
+
+.image-dev {
+  position: relative;
+  width: clamp(420px, 40vw, 620px);
+  max-height: 520px;
+  aspect-ratio: 4 / 3;   /* houdt vorm netjes */
+  margin: 0 auto; 
+   perspective: 1000px;
+   overflow: hidden;
+  border-radius: 10px;
+  padding-bottom: 10px;
+
+
+}
+.image-dev::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80px; /* hoogte van de schaduw */
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0) 70%
+  );
+}
+
+
+
+@media (max-width: 968px) {
+
+  .hero-area {
+    height: auto;
+  }
+
+  .image-dev {
+    width: auto;
+    max-width: 420px;
+    height: auto;
+    max-height: 320px;
+
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+ 
+  .top-row {
+    flex-direction: column;  /* containers onder elkaar */
+    gap: 1px;              /* ruimte tussen de rijen */
+    align-items: center;
+    width: 100%;
+  }
+
+  
+
+#container-bl, #container-two {
+       /* neem volledige breedte van parent */
+  width: auto;
+  height: auto;            /* hoogte past bij content */
+  box-sizing: border-box;
+}
+
+p {
+margin: 10px 0;            /* iets strakker op mobile */
+/* tekst schaalt mee */
+line-height: 1.4; /* standaard ~1.5, lager = dichter op elkaar */
+}
+}
+
+
+
+
+.hero-area-middle { /* -------------------------------------------------*/
+  display: flex;
+  width: auto;
+  height: auto;
+ /* background -----*/
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  margin-bottom: 10vw;
+  color: whitesmoke;
+
+}
+
+.content-box {
+  width: auto;
+  height: auto;
+  /*background-color: whitesmoke;*/
+  margin: 0 20px 0 15px;
+  padding: 10px;
+  font-size: 30px;
+}
+
+
+@media (max-width: 480px) {
+
+
+.hero-area-middle {
+  height: auto;
+   width: auto;
+   padding-bottom: 15px;
+}
+
+.icon-wrapper.html {
+  height: 76px;
+  width: 80px;
+  background-color: #e11010;
+  border-radius: 20px 0 20px 0;
+  
+}
+
+.icon-wrapper.css {
+  background-color: rgb(185, 185, 19);
+  width: 15vw;
+  height: 15vw;
+  border-radius: 20px 0 20px 0;
+}
+
+.icon-wrapper.js {
+  background-color: rgb(93, 179, 139);
+  border-radius: 20px 0 20px 0;
+  width: 15vw;
+  height: 15vw;
+}
+}
+#space {
+  margin-bottom: 20px 0;
+}
+
+
+/* HTML ---------------------------------------*/
+.tech-icon {
+  width: 65px;
+  height: 60px;
+  fill: #0e0ea8; /* HTML5 oranje */
+  transition: fill 0.3s ease;
+  padding: 10px 0 0 5px;
+}
+
+.tech-icon.html:hover {
+  fill: #ffbb33; /* bijvoorbeeld op hover een lichtere tint */
+  
+}
+.icon-wrapper.html {
+  height: 76px;
+  width: 80px;
+  background-color: #e11010;
+  border-radius: 20px 0 20px 0;
+}
+
+.icon-wrapper {
+  margin-bottom: 35px;
+}
+/* CSS ---------------------------------------------*/
+.icon-wrapper.css {
+  background-color: rgb(185, 185, 19);
+  width: 80px;
+  height: 76px;
+  border-radius: 20px 0 20px 0;
+}
+.tech-icon.css:hover {
+  fill: rgb(9, 159, 164);
+}
+
+/* js -------------------------------------------------*/
+.icon-wrapper.js {
+  background-color: rgb(93, 179, 139);
+  border-radius: 20px 0 20px 0;
+  width: 80px;
+  height: 76px;
+}
+.tech-icon.js:hover {
+  fill: rgb(154, 14, 189);
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 3s, transform 3s;
+}
+
+.fade-in.fade-in-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.content-box {
+  animation-delay: 0.3s; /* komt iets later in beeld */
+}
+
+.icon-wrapper.css, .icon-wrapper.html, .icon-wrapper.js {
+  margin-left: 50%;
+
+}
+
+.icons-row {
+  display: flex;
+  justify-content: center; /* horizontaal centreren */
+  gap: 30px; /* ruimte tussen de iconen */
+  flex-wrap: wrap; /* voor mobile: ze vallen netjes onder elkaar als te smal */
+  margin-top: 30px;
+}
+
+/* verwijder de margin-left op de icon-wrapperen */
+.icon-wrapper.html,
+.icon-wrapper.css,
+.icon-wrapper.js {
+  margin-left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero-image {
+  position: relative;
+  width: 100vw;
+  height: 50vw;
+  overflow: hidden;
+
+}
+/*.      background-position: center 50%;  */
+.hero-image::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./assets/images/colors-.jpg') no-repeat center center;
+  background-size: cover;
+  animation: subtle-zoom 8s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+/* alleen in- en uitzoomen */
+@keyframes subtle-zoom {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.10); }
+  100% { transform: scale(1); }
+}
+
+.image-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  width: 100vw;
+  height: 45vw;
+  padding: 2rem;
+}
+
+
+
+
+
+
+
+.hero-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  background-color: black;
+}
+
+.footer-content {
+  height: auto;
+  width: auto;
+  padding: 5px;
+  cursor: pointer;
+
+
+}
+.footer-content, li, a{
+  list-style: none;
+  color: whitesmoke;
+}
+
+.footer-content ul {
+  display: flex;       /* horizontale layout */
+  gap: 20px;           /* ruimte tussen iconen */
+  padding: 0;          /* geen extra padding */
+  list-style: none;    /* geen bullets */
+  margin: 10px 0;      /* optioneel, wat ruimte van de tekst */
+}
+
+.footer-content li {
+  display: flex;
+  align-items: center; /* centreren verticaal als je meerdere elementen hebt */
+}
+
+
+.paragr {
+  font-size: 80px;
+}
+
+a.github svg path {
+color:rgb(168, 12, 220) ;
+transition: color 0.3s ease;
+}
+
+a.github:hover svg path{
+fill: rgb(220, 85, 12);
+}
+
+a.linked svg path{
+  color: rgb(10, 102, 194); /* standaardkleur */
+  transition: color 0.3s ease;
+}
+a.linked:hover svg path{
+fill: rgb(56, 166, 225);
+}
+
+
+/* copyright */
+#bottom {
+  text-align: center;
+  margin-top: auto;
+}
+#copyright {
+  background-color: black;
+  height: 6vw;
+  width: 100vw;
+}
