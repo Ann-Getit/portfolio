@@ -1,5 +1,7 @@
+import devPicture from '../assets/images/dev.picture.jpg';
 import { useEffect } from "react";
 import "../index.css";
+
 
 export default function Hero() {
   useEffect(() => {
@@ -37,7 +39,7 @@ export default function Hero() {
 
       <div className="image-dev">
         <div className="img-wrapper">
-        <img src="/src/assets/images/dev.picture.jpg" alt="developer"/>
+        <img src={devPicture} alt="developer"/>
         </div>
         </div>
   );
