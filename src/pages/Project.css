@@ -10,8 +10,9 @@
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /*.Nu kun je zoveel projects toevoegen als je wilt, zonder layout breuk. */
-  gap: 24px;
+  gap: 60px;
   justify-items: center;
+  margin: 40px;
 }
 
 .project-card {
@@ -20,7 +21,7 @@
   padding: 24px;
   border-radius: 14px;
   cursor: pointer;
-
+  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -31,6 +32,16 @@
 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+/*  Tip: wil je dat de laatste rij gecentreerd wordt als deze niet vol is?
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  justify-content: center; /* zorgt dat 5e card mooi gecentreerd staat */
+
+
 
 .project-card:hover {
   transform: translateY(-6px);

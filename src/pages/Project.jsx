@@ -64,6 +64,26 @@ const Project = () => {
      <p>Korte beschrijving van het project.</p>
       <span>Bekijk project →</span>
   </div>
+   <div className="project-card">
+     <h3>Project titel</h3>
+     <p>Korte beschrijving van het project.</p>
+      <span>Bekijk project →</span>
+  </div>
+   <div className="project-card">
+     <h3>Project titel</h3>
+     <p>Korte beschrijving van het project.</p>
+      <span>Bekijk project →</span>
+  </div>
+   <div className="project-card">
+     <h3>Project titel</h3>
+     <p>Korte beschrijving van het project.</p>
+      <span>Bekijk project →</span>
+  </div>
+   <div className="project-card">
+     <h3>Project titel</h3>
+     <p>Korte beschrijving van het project.</p>
+      <span>Bekijk project →</span>
+  </div>
  </div>
 
 
