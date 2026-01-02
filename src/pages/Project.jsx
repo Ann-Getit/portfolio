@@ -6,6 +6,7 @@ import "../index.css";
 
 
 
+
 const Project = () => {
     const [open, setOpen] = useState(false);
     const navigate = useNavigate();
@@ -58,10 +59,12 @@ const Project = () => {
       <h1 className="projects-title">Projects</h1>
 
  <div className="projects-grid">
-      {/** project cards komen hier  */}
-   <div className="project-card">
-     <h3>Project titel</h3>
-     <p>Korte beschrijving van het project.</p>
+
+   <div className="project-card"
+   onClick={() => window.location.href = "/projects/chatbot/index.html"}
+>
+     <h3>Reactive chatbot</h3>
+     <p>Interactieve webchat gebouwd met vanilla JS.</p>
       <span>Bekijk project →</span>
   </div>
    <div className="project-card">

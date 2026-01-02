@@ -5,6 +5,12 @@
 .projects-title {
   font-size: 2.5rem;
   margin-bottom: 40px;
+  text-align: center;
+}
+.projects-title:hover {
+    color: blueviolet;
+    transition: color 1s ease;
+    /*transform: scale(1.05);*/
 }
 
 .projects-grid {
