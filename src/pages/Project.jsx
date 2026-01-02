@@ -64,17 +64,21 @@ const Project = () => {
    onClick={() => window.location.href = "/projects/chatbot/index.html"}
 >
      <h3>Reactive chatbot</h3>
-     <p>Interactieve webchat gebouwd met vanilla JS.</p>
+     <p>An interactive web chat application built using vanilla JavaScript, connected to a serverless API for dynamic responses.</p>
       <span>Bekijk project →</span>
   </div>
-   <div className="project-card">
-     <h3>Project titel</h3>
-     <p>Korte beschrijving van het project.</p>
+   <div className="project-card" 
+   onClick={() => window.location.href = "https://ann-getit.github.io/magic8ball/"}
+   >
+     <h3>Magic 8 ball</h3>
+     <p>A simple web application built with HTML, CSS, and vanilla JavaScript where users ask a question and receive a random answer. </p>
       <span>Bekijk project →</span>
   </div>
-   <div className="project-card">
-     <h3>Project titel</h3>
-     <p>Korte beschrijving van het project.</p>
+   <div className="project-card"
+   onClick={() => window.location.href = "https://ann-getit.github.io/moving-balls/"}
+   >
+     <h3>moving balls</h3>
+     <p>A fun web animation where you can watch colorful balls move and bounce around the screen, built with HTML, CSS, and JavaScript.</p>
       <span>Bekijk project →</span>
   </div>
    <div className="project-card">
