@@ -16,14 +16,18 @@
   background-size: 100% 100%;   /* vult hele viewport */
   background-attachment: fixed;
 }
+/** {
+  outline: 1px solid red;
+}*/
 
 html, body {
   margin: 0; 
   min-height: 100vh;
   color: white;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  
 }
+
 
 
 .nav-container {
@@ -236,13 +240,17 @@ React state (dropdownOpen) voor mobile click-behavior */
 h1 {
   font-size: 35px;
 }
+.hero-area, .top-row {
+  overflow-x: hidden;
+}
+
 
 .hero-area {
   background-color: ; /* background -----*/
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: 100vw;
+  width: 100%;
   min-height: 55vw;
   height: auto;
   justify-content: center;
@@ -271,7 +279,7 @@ justify-content: center;
   color: whitesmoke;
   margin-left: 40px;
   position: relative;
-  display: inline-block;
+  display: block;
   color: whitesmoke;
 }
 
@@ -327,7 +335,7 @@ p {
 }
 
 .image-dev img {
-  width: 100%;
+  width: 100%;/*-------------------WIDTH-----------------------------*/
   height: 100%;
   object-fit: cover;   /* voorkomt “gerekte strook” look */
   transform-style: preserve-3d;
@@ -356,7 +364,7 @@ p {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100%;
+  width: 100%; /* --------------WIDTH------------------*/
   height: 80px; /* hoogte van de schaduw */
   pointer-events: none;
   background: radial-gradient(
@@ -389,7 +397,7 @@ p {
     flex-direction: column;  /* containers onder elkaar */
     gap: 1px;              /* ruimte tussen de rijen */
     align-items: center;
-    width: 100%;
+    width: 100%; 
   }
 
   
@@ -413,7 +421,8 @@ line-height: 1.4; /* standaard ~1.5, lager = dichter op elkaar */
 
 .hero-area-middle { /* -------------------------------------------------*/
   display: flex;
-  width: auto;
+  flex-wrap: wrap;
+  max-width: 100vw;
   height: auto;
  /* background -----*/
   flex-direction: row;
@@ -422,16 +431,19 @@ line-height: 1.4; /* standaard ~1.5, lager = dichter op elkaar */
   gap: 2vw;
   margin-bottom: 10vw;
   color: whitesmoke;
-
+  overflow-x: hidden;    
+  box-sizing: border-box;
 }
 
 .content-box {
-  width: auto;
+  width: 100%;
   height: auto;
   /*background-color: whitesmoke;*/
-  margin: 0 20px 0 15px;
+  margin: 0;
   padding: 10px;
   font-size: 30px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 
@@ -492,7 +504,11 @@ line-height: 1.4; /* standaard ~1.5, lager = dichter op elkaar */
 }
 
 .icon-wrapper {
-  margin-bottom: 35px;
+  margin: 0;
+  width: clamp(60px, 15vw, 80px);
+  height: auto;
+  box-sizing: border-box;
+
 }
 /* CSS ---------------------------------------------*/
 .icon-wrapper.css {
@@ -531,17 +547,17 @@ line-height: 1.4; /* standaard ~1.5, lager = dichter op elkaar */
   animation-delay: 0.3s; /* komt iets later in beeld */
 }
 
-.icon-wrapper.css, .icon-wrapper.html, .icon-wrapper.js {
-  margin-left: 50%;
-
-}
-
 .icons-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center; /* horizontaal centreren */
-  gap: 30px; /* ruimte tussen de iconen */
+  align-items: center;
+  gap: 2vw; /* ruimte tussen de iconen */
   flex-wrap: wrap; /* voor mobile: ze vallen netjes onder elkaar als te smal */
+  width: 100%;
   margin-top: 30px;
+   max-width: 100%;
+   box-sizing: border-box;
 }
 
 /* verwijder de margin-left op de icon-wrapperen */
@@ -571,7 +587,7 @@ line-height: 1.4; /* standaard ~1.5, lager = dichter op elkaar */
 
 .hero-image {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 50vw;
   overflow: hidden;
 
@@ -601,7 +617,7 @@ line-height: 1.4; /* standaard ~1.5, lager = dichter op elkaar */
   z-index: 1;
   text-align: center;
   color: white;
-  width: 100vw;
+  width: 100%;
   height: 45vw;
   padding: 2rem;
 }
@@ -650,7 +666,9 @@ line-height: 1.4; /* standaard ~1.5, lager = dichter op elkaar */
 
 
 .paragr {
-  font-size: 80px;
+  font-size: 70px;
+  text-align: center;
+  max-width: 100%;
 }
 
 a.github svg path {
@@ -679,5 +697,5 @@ fill: rgb(56, 166, 225);
 #copyright {
   background-color: black;
   height: 6vw;
-  width: 100vw;
+  width: 100%;
 }
