@@ -47,14 +47,41 @@ const Project = () => {
 
       </nav>
 
+
+
+
+
+
+
     
-        <div className="page1">
-      <h1>Projects</h1>
-      </div>
+<sections className="projects">
+      <h1 className="projects-title">Projects</h1>
+
+ <div className="projects-grid">
+      {/** project cards komen hier  */}
+   <div className="project-card">
+     <h3>Project titel</h3>
+     <p>Korte beschrijving van het project.</p>
+      <span>Bekijk project →</span>
+  </div>
+ </div>
 
 
-    <div className="page2"></div>
-    </div>
+{/**. {projects.map(project => (
+  <ProjectCard key={project.id} {...project} />
+))}
+  */}
+
+    
+</sections>
+
+
+
+
+
+
+
+</div>
   );
 };
 
