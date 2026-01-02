@@ -4,9 +4,10 @@ import Hero from '../assets/first-pict.jsx';
 import useScrollFade from "../useScrollFade"; 
 
 const Home = () => {
+
+
   useScrollFade(".fade-in, .slide-left, .slide-right, .wave");
   const { hash } = useLocation();
-
 
 
   useEffect(() => {
@@ -33,6 +34,7 @@ const Home = () => {
      </div>
      </div>
         <Hero />
+        
         </section>
      </div>
 <div className="hero-area-middle">
@@ -64,7 +66,6 @@ const Home = () => {
      <div className="hero-image">
      <div className="image-content">
       {/*image is via css  */ }
-    
   </div>
     </div>
       <footer className="hero-footer">

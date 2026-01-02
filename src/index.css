@@ -599,7 +599,7 @@ line-height: 1.4; /* standaard ~1.5, lager = dichter op elkaar */
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: url('./assets/images/colors-.jpg') no-repeat center center;
+  background: url('/images/colors-.jpg') no-repeat center center;
   background-size: cover;
   animation: subtle-zoom 8s ease-in-out infinite alternate;
   z-index: 0;

@@ -2,7 +2,6 @@ import devPicture from '../assets/images/dev.picture.jpg';
 import { useEffect } from "react";
 import "../index.css";
 
-
 export default function Hero() {
   useEffect(() => {
     const pic = document.querySelector(".image-dev img");
