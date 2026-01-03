@@ -15,7 +15,7 @@ const [open, setOpen] = useState(false);
       <ul className="nav-links desktop">
           <li><Link to="#home">Home</Link></li> {/** inplaats van anchor href toch wel link to gebruiken zodat ik niet vast blijft in "project page" */}
           <li><Link to="#about">About</Link></li> {/** hover voor de nav links */}
-
+          
           <li className="dropdown">
               <span className="dropbtn">Work ▾</span>
               <ul className="dropdown-content">

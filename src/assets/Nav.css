@@ -1,6 +1,6 @@
 :root { /*  http://localhost:5173/  */
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  line-height: 0.5;
   font-weight: 400;
   color-scheme: light dark;
   background: linear-gradient(
@@ -21,6 +21,7 @@ html, body {
   margin: 0;
   min-height: 100vh;
   color: white;
+  scroll-behavior: smooth;
 }
 
 .nav-container {
@@ -34,7 +35,7 @@ html, body {
   width: 70%;
   border-radius: 50px;
   position: sticky;
-  top: 0;
+  top: 1rem;
   z-index: 1005;
   margin: 1rem auto;
   
@@ -49,25 +50,14 @@ html, body {
 display: flex;
   gap: 2rem;
   list-style: none;
+  font-size: 1.5rem;
   
-  /*position: fixed;
-  top: 0;
-  right: 0;
-  width: 70vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.9);
-  transform: translateX(100%);
-  transition: transform .3s ease;
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  padding-top: 5rem;*/
 }
 
 .nav-links.mobile {
-  display: none;
+  display: flex; 
   position: fixed;
-  top: 0;
+  top: 85px; /*---it was top: 0;------*/
   right: 0;
   height: 100vh;
   width: 70vw;
@@ -83,13 +73,17 @@ display: flex;
 .nav-links.desktop li a {
   color: rgba(255, 255, 255, 0.582);
   text-decoration: none;
-
 }
 
+
+
+/*.nav-bar.open {
+  transform: translateX(0);
+}
 
 .nav-links.open {
   transform: translateX(0);
-}
+}*/
 
 
 
@@ -98,31 +92,10 @@ display: flex;
   font-size: 3rem;
   color: white;
   cursor: pointer;
+  border: solid 1px white;
+  padding: 0.3rem 0.3rem 0.9rem 0.3rem;
+  border-radius: 10px;
 
-}
-
-
-
-/*.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw; 
-  height: 80vh;
-  background: rgba(0,0,0,0.5);
-  z-index: 9998;
-}*/
-
-.nav-bar.open {
-  transform: translateX(0);
-}
-
-
-
-a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.582);
-  font-size: 30px;
 }
                                                                                                                     
 /* Dropdown container dit aanpassen  */
@@ -133,7 +106,7 @@ a {
 .dropbtn {
   cursor: pointer;
   color: rgba(255, 255, 255, 0.582);
-  font-size: 30px;
+  font-size: 1.5rem;
 }
 
 
@@ -142,8 +115,10 @@ a {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: rgba(255,255,255,0.95);
-  color: black;
+  background-color: black;
+  height: 45px;/*dit toegevoegd*/
+  padding-top: 15px;/*dit toegevoegd*/
+  margin-top: 5px;/*dit toegevoegd*/
   min-width: 150px;
   border-radius: 5px;
   z-index: 1000;
@@ -172,14 +147,15 @@ a {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 84px; /* onder de nav-container */
+    top: calc(85px + 1rem);  /* onder de nav-container */
     right: 0;
     width: 50vw;
-    height: 70vh;
-    background: rgba(0,0,0,0.95);
+    height: calc(100vh - 85px - 1rem);
+    background: rgba(0,0,0,0.855);
     transform: translateX(100%);
     transition: transform 0.3s ease; /* even de nav-links.mobile testen tijdens klikken ervan */
     padding-top: 3rem;
+    margin: 0;
     gap: 2rem;
     z-index: 1001;
     list-style: none;
@@ -197,27 +173,13 @@ a {
 
   .overlay {
     position: fixed;
-    /*margin-top: -15px;*/
-    top: 100px;
+    top: calc(85px + 1rem);
     left: 0;
     width: 100vw;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 85px - 1rem);
     background: rgba(0,0,0,0.5);
     z-index: 1000;
   }
-
-
-   /*a, .dropbtn {
-    padding: 0.5rem;
-    width: 100%;
-    text-align: left;
-  }
-
-  .dropdown-content {
-    position: absolute;
-    background: transparent;
-    color: white;
-  }*/
 }
 
 /*. Desktop dropdown‐CSS
@@ -250,7 +212,6 @@ h1 {
 
 
 .hero-area {
-  background-color: rgba(115, 32, 32, 0.392);
   display: flex;
   flex-direction: column;
   gap: 2rem;
