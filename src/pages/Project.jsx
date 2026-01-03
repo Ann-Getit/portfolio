@@ -71,7 +71,7 @@ const Project = () => {
    onClick={() => window.location.href = "https://ann-getit.github.io/magic8ball/"}
    >
      <h3>Magic 8 ball</h3>
-     <p>A simple web application built with HTML, CSS, and vanilla JavaScript where users ask a question and receive a random answer. </p>
+     <p>A world map built with Leaflet that displays Dutch train stations using an external API and JavaScript. </p>
       <span>Bekijk project →</span>
   </div>
    <div className="project-card"
@@ -81,14 +81,18 @@ const Project = () => {
      <p>A fun web animation where you can watch colorful balls move and bounce around the screen, built with HTML, CSS, and JavaScript.</p>
       <span>Bekijk project →</span>
   </div>
-   <div className="project-card">
-     <h3>Project titel</h3>
-     <p>Korte beschrijving van het project.</p>
+   <div className="project-card"
+   onClick={() => window.location.href = "https://ann-getit.github.io/rente-berekening/"}
+   >
+     <h3>Interest Calculator</h3>
+     <p>A simple web application built with HTML, CSS and JavaScript to calculates interest for any amount </p>
       <span>Bekijk project →</span>
   </div>
-   <div className="project-card">
-     <h3>Project titel</h3>
-     <p>Korte beschrijving van het project.</p>
+   <div className="project-card"
+     onClick={() => window.location.href = "https://ann-getit.github.io/landkaart/"}
+   >
+     <h3>Map</h3>
+     <p>A world map built with Leaflet, featuring Dutch train stations added via an external API and JavaScript.</p>
       <span>Bekijk project →</span>
   </div>
  </div>
