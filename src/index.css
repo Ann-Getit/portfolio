@@ -388,6 +388,7 @@ p {
   width: auto;
   height: auto;            /* hoogte past bij content */
   box-sizing: border-box;
+  font-size: 1.5rem;
 }
 
 p {
@@ -421,7 +422,7 @@ line-height: 1.4; /* standaard ~1.5, lager = dichter op elkaar */
   height: auto;
   /*background-color: whitesmoke;*/
   margin: 0;
-  padding: 10px;
+  padding: 30px;
   font-size: 30px;
   max-width: 100%;
   box-sizing: border-box;
@@ -462,6 +463,29 @@ line-height: 1.4; /* standaard ~1.5, lager = dichter op elkaar */
 #space {
   margin-bottom: 20px 0;
 }
+@media (max-width: 968px) {
+  .content-box {
+   font-size: 1.3rem;
+   
+  }
+  .content-box p {
+    padding-bottom: 30px;
+    
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* HTML ---------------------------------------*/
@@ -571,8 +595,14 @@ line-height: 1.4; /* standaard ~1.5, lager = dichter op elkaar */
   width: 100%;
   height: 50vw;
   overflow: hidden;
-
 }
+
+@media (max-width: 968px) {
+.hero-image {
+  height: 90vw;
+}
+}
+
 /*.      background-position: center 50%;  */
 .hero-image::before {
   content: "";
@@ -651,6 +681,13 @@ line-height: 1.4; /* standaard ~1.5, lager = dichter op elkaar */
   text-align: center;
   max-width: 100%;
 }
+@media (max-width: 968px) {
+.paragr {
+  font-size: 3rem;
+}
+}
+
+
 
 a.github svg path {
 color:rgb(168, 12, 220) ;
@@ -668,6 +705,13 @@ a.linked svg path{
 a.linked:hover svg path{
 fill: rgb(56, 166, 225);
 }
+
+
+
+
+
+
+
 
 
 /* copyright */

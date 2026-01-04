@@ -68,7 +68,7 @@ const Project = () => {
   </div>
    <div className="project-card">
      <h3>Magic 8 ball</h3>
-     <p>A world map built with Leaflet that displays Dutch train stations using an external API and JavaScript. </p>
+     <p>An interactive Magic 8 Ball tool that gives dynamic yes/no answers. </p>
       <span onClick={() => window.location.href = "https://ann-getit.github.io/magic8ball/"}
       >Bekijk project →</span>
   </div>
