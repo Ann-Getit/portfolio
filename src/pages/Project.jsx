@@ -2,7 +2,8 @@ import { useState } from "react";
 /*import { Link } from 'react-router-dom';*/ /**kan je nog gebruiken als je interne links binnen Project wilt,  */
 import { useNavigate } from "react-router-dom";
 import "../pages/Project.css";
-import "../index.css";
+import "../assets/Nav.css";
+
 
 
 
@@ -13,7 +14,10 @@ const Project = () => {
 
 
 
+
   const handleNavClick = (id) => {
+
+    
     navigate(`/#${id}`);
     setOpen(false);
 
@@ -21,14 +25,16 @@ const Project = () => {
 
   return (
 <div className="page">
+
     {/* Navbar alleen voor Project-pagina */}
       <nav className="nav-container">
         <div className="logo">A.developer</div>
-        <ul className="nav-links desktop">
+
+      <ul className="nav-links desktop">
           <li onClick={() => handleNavClick("home")}>Home</li>
           <li onClick={() => handleNavClick("about")}>About</li>
           <li onClick={() => handleNavClick("contact")}>Contact</li>
-        </ul>
+      </ul>
 
            {/* Hamburger voor mobiel */}
       <div className="hamburger" onClick={() => setOpen(!open)}>
@@ -55,7 +61,7 @@ const Project = () => {
 
 
     
-<sections className="projects">
+<section className="projects">
       <h1 className="projects-title">Projects</h1>
 
  <div className="projects-grid">
@@ -97,9 +103,8 @@ const Project = () => {
   <ProjectCard key={project.id} {...project} />
 ))}
   */}
+</section>
 
-    
-</sections>
 
 
 

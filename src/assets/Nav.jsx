@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import "../index.css";
-
+import "../assets/Nav.css";
 
 export default function Nav() {
 const [open, setOpen] = useState(false);
   return (
     <>
     <nav className="nav-container">
+
         <div className="logo">A.developer</div>
 
         {/* Desktop links */}
@@ -21,15 +21,14 @@ const [open, setOpen] = useState(false);
               <ul className="dropdown-content">
                 <li><Link to="/project">Projects</Link></li> 
              </ul>
-          </li>
+          </li> 
           <li><Link to="#contact">Contact</Link></li>
         </ul>
 
-        {/* Hamburger voor mobiel */}
+        {/* Hamburger voor mobiel */} 
       <div className="hamburger" onClick={() => setOpen(!open)}>
-        &#9776;
-      </div>
-
+        &#9776; 
+      </div> 
 
 
 

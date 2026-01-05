@@ -1,4 +1,12 @@
-:root { /*  http://localhost:5173/  */
+/*  http://localhost:5173/  */
+
+
+/* check the path alles moet goed connected zijn */
+
+/** {
+  outline: 1px solid red;
+}*/
+:root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 0.5;
   font-weight: 400;
@@ -11,25 +19,38 @@
     #f397e1,
     rgb(185, 111, 120)
     );
-
-  background-repeat: no-repeat; /* geen herhaling */
-  background-size: 100% 100%;   /* vult hele viewport */
+  background-repeat: no-repeat; 
+  background-size: 100% 100%;   
   background-attachment: fixed;
+
 }
 
-html, body {
-  margin: 0;
+body {
+  margin: 0; 
+  min-height: 100vh;
+  color: white;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+html {
+  margin: 0; 
   min-height: 100vh;
   color: white;
   scroll-behavior: smooth;
 }
+
+
+
+
+
 
 .nav-container {
   /*margin: 2rem auto 2rem auto; */
   display: flex;
   justify-content: space-around; /* logo links, burger/menu rechts */
   align-items: center;
-  background-color: rgba(69, 40, 40, 0.204);
+  background-color: rgba(69, 40, 40, 0.25);
   padding: 0 1rem;
   height: 85px;
   width: 70%;
@@ -37,8 +58,9 @@ html, body {
   position: sticky;
   top: 1rem;
   z-index: 1005;
-  margin: 1rem auto;
-  
+  margin: 0 auto;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); /* Safari */
 }
 
 .logo {
@@ -46,18 +68,19 @@ html, body {
   color: rgba(255, 255, 255, 0.793);
 }
 
+
+/* grote scherm*/
 .nav-links.desktop {
-display: flex;
+  display: flex;
   gap: 2rem;
   list-style: none;
   font-size: 1.5rem;
-  
 }
-
+/*ook grote scherm*/
 .nav-links.mobile {
-  display: flex; 
+  display: none; /**flex to none*/
   position: fixed;
-  top: 85px; /*---it was top: 0;------*/
+  top: 0; /*---it was top: 85px;------*/
   right: 0;
   height: 100vh;
   width: 70vw;
@@ -67,24 +90,25 @@ display: flex;
   transform: translateX(100%);
   transition: transform 0.3s ease;
   z-index: 9999;
-}
+  
+/* het was margin 1rem auto;*/}
 
 
+/* ----de <li>------*/
 .nav-links.desktop li a {
-  color: rgba(255, 255, 255, 0.582);
+  color: white;
   text-decoration: none;
+  transition: color 0.3s ease;
+  /*font-size: 30px;*/
 }
 
-
-
-/*.nav-bar.open {
-  transform: translateX(0);
+.nav-links.desktop li a:hover {
+  color: rgba(255, 255, 255, 0.582);
 }
 
-.nav-links.open {
-  transform: translateX(0);
-}*/
+/* 
 
+*/
 
 
 .hamburger {
@@ -103,11 +127,22 @@ display: flex;
   position: relative; 
 }
 
+
+
+
+
+
+ /*  link "WORK" >   */
 .dropbtn {
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.582);
+  color: white;
   font-size: 1.5rem;
+  transition: color 0.3s ease;
 }
+.dropbtn:hover { /*  link "WORK" >   */
+color: rgba(255, 255, 255, 0.582);
+}
+
 
 
 .dropdown-content {
@@ -119,7 +154,7 @@ display: flex;
   height: 45px;/*dit toegevoegd*/
   padding-top: 15px;/*dit toegevoegd*/
   margin-top: 5px;/*dit toegevoegd*/
-  min-width: 150px;
+  min-width: 110px;
   border-radius: 5px;
   z-index: 1000;
 }
@@ -130,6 +165,8 @@ display: flex;
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+
 
 /* Responsief: kleine schermen */
 @media (max-width: 968px) {
@@ -145,234 +182,71 @@ display: flex;
 
   .nav-links.mobile {
     display: flex;
-    flex-direction: column;
+    /*flex-direction: column;*/ 
     position: fixed;
-    top: calc(85px + 1rem);  /* onder de nav-container */
+    top: 85px;  /* onder de nav-container */
     right: 0;
-    width: 50vw;
-    height: calc(100vh - 85px - 1rem);
+    height: calc(100vh - 85px);
     background: rgba(0,0,0,0.855);
-    transform: translateX(100%);
+    transform: translateX(150%);
     transition: transform 0.3s ease; /* even de nav-links.mobile testen tijdens klikken ervan */
     padding-top: 3rem;
     margin: 0;
     gap: 2rem;
     z-index: 1001;
     list-style: none;
+    
+
+    
   }
 
   .nav-links.mobile.open {
-    transform: translateX(0);
+    transform: translateX(50%);
   }
 
+
+  /*  alle links voor mobile overlay behalve Work(aparte hover)*/
   .nav-links.mobile li a {
     color: white;
     font-size: 1.5rem;
     text-decoration: none;
+    transition: color 0.3s ease;
   }
+  /*  alle links voor mobile overlay behalve Work(aparte hover)*/
+  .nav-links.mobile li a:hover {
+    color: rgba(255, 255, 255, 0.582);
+  }
+
 
   .overlay {
     position: fixed;
-    top: calc(85px + 1rem);
-    left: 0;
+    top: 85px;
+    padding: 0;
     width: 100vw;
-    height: calc(100vh - 85px - 1rem);
-    background: rgba(0,0,0,0.5);
+    height: calc(100vh - 85px);
+    background: rgba(0, 0, 0, 0.667);
     z-index: 1000;
-  }
+    transform: translateX(0);
+  }  
 }
 
-/*. Desktop dropdown‐CSS
-
-Mobile dropdown‐CSS
-
-React state (dropdownOpen) voor mobile click-behavior */
-/*
-  .dropdown-content {
-    position: static;  dit zorgt ervoor dat je content geduwd worden 
-  } */
 
 
-
-.menu {
+/*.menu {  MENU ??
    list-style: none;
   display: flex;
   gap: 2rem;
-}
-
-.menu li {
+}*/
+/*
+.menu li {  MENU ??
   position: relative;
   cursor: pointer;
-}
+}*/
 
 
-h1 {
+/*
+h1 {  h1 ????????
   font-size: 35px;
-}
+}*/
 
-
-.hero-area {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  width: 100vw;
-  height: 50vw;
-  justify-content: center;
-  padding-top: 75px;
-  margin-bottom: 10vw;
-  color: black;
-  /*flex-direction: column; onderelkaar*/
-}
-
-.top-row {
-display: flex;
-gap: 5rem;
-justify-content: center;
-}
-
-
-
-#container-bl, #container-two {
-  flex: 1;
-  max-width: 45vw;
-  height: 18vw;
-  background-color: whitesmoke;
-}
-
-.slide-left {
-  opacity: 0;
-  transform: translateX(-50px); /* start buiten links */
-  transition: opacity 4s, transform 3s;
-
-}
-
-.slide-left.fade-in-active {
-  opacity: 1;
-  transform: translateX(0);      /* eindpositie */
-
-}
-
-
-.slide-right {
-  opacity: 0;
-  transform: translateX(50px); /* start buiten rechts */
-  transition: opacity 4s, transform 3s;
-
-}
-
-.slide-right.fade-in-active {
-  opacity: 1;
-  transform: translateX(0);
-
-}
-
-
-
-
-.hero-area-middle {
-  display: flex;
-  width: 100vw;
-  height: 45vw;
-  background-color: rgba(115, 32, 32, 0.302);
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 2vw;
-  margin-bottom: 10vw;
-
-}
-
-
-
-.content-box {
-  width: 40vw;
-  height: 35vw; 
-  background-color: whitesmoke;
-  
-}
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 3s, transform 3s;
-}
-
-.fade-in.fade-in-active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-.content-box {
-  animation-delay: 0.3s; /* komt iets later in beeld */
-}
-
-
-
-
-
-.hero-image {
-  position: relative;
-  width: 100vw;
-  height: 50vw;
-  overflow: hidden;
-
-}
-/*.      background-position: center 50%;  */
-.hero-image::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('./assets/images/colors-.jpg') no-repeat center center;
-  background-size: cover;
-  animation: subtle-zoom 8s ease-in-out infinite alternate;
-  z-index: 0;
-}
-
-/* alleen in- en uitzoomen */
-@keyframes subtle-zoom {
-  0%   { transform: scale(1); }
-  50%  { transform: scale(1.10); }
-  100% { transform: scale(1); }
-}
-
-.image-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  color: white;
-  width: 100vw;
-  height: 45vw;
-  padding: 2rem;
-}
-
-
-.hero-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 35vw;
-  background-color: black;
-}
-
-.footer-content {
-  height: 15vw;
-  width: 50vw;
-  background-color: whitesmoke;
-
-}
-
-
-/* copyright */
-#bottom {
-  text-align: center;
-  margin-top: auto;
-}
-#copyright {
-  background-color: black;
-  height: 6vw;
-}
+/*---------------------------------          --------------  ------------------*/

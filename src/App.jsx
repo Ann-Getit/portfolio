@@ -9,8 +9,8 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Project from './pages/Project';
 import useScrollFade from "./useScrollFade";
-import "./index.css";
 import Nav from "./assets/Nav"; 
+
 /*import Hero from './assets/first-pict.jsx';*/
 /*import { ReactComponent as JsIcon } from './js.svg';*/
 
@@ -38,7 +38,6 @@ function App() {
         <Route path="/project" element={<Project />} />
      </Routes>
 </main> 
-
    </Router>
   );
 } 

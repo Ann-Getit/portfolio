@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Hero from '../assets/first-pict.jsx';
 import useScrollFade from "../useScrollFade"; 
+import "../index.css";
+
 
 const Home = () => {
 
@@ -30,7 +32,7 @@ const Home = () => {
       <p>I'm Anna-Elise Tweeboom, a junior developer.</p>
      </div>
      <div id="container-two" className="slide-right wave">
-      <p>I build responsive web applications from clean layouts to small projects</p>
+      <p>I build responsive web projects, from clean layouts to interactive tools.</p>
      </div>
      </div>
         <Hero />
