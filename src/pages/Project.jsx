@@ -70,31 +70,31 @@ const Project = () => {
      <h3>Reactive chatbot</h3>
      <p>An interactive chat application built using vanilla JavaScript, connected to a serverless API for dynamic responses.</p>
       <span  onClick={() => window.location.href = "/projects/chatbot/index.html"}
-      >Bekijk project →</span>
+      >View project →</span>
   </div>
    <div className="project-card">
      <h3>Magic 8 ball</h3>
      <p>An interactive Magic 8 Ball tool that gives dynamic yes/no answers. </p>
       <span onClick={() => window.location.href = "https://ann-getit.github.io/magic8ball/"}
-      >Bekijk project →</span>
+      >View project →</span>
   </div>
    <div className="project-card">
      <h3>moving balls</h3>
      <p>A fun web animation where you can watch colorful balls move and bounce around the screen, built with HTML, CSS, and JavaScript.</p>
       <span  onClick={() => window.location.href = "https://ann-getit.github.io/moving-balls/"}
-      >Bekijk project →</span>
+      >View project →</span>
   </div>
    <div className="project-card">
      <h3>Interest Calculator</h3>
      <p>A simple calculator built with HTML, CSS and JavaScript to calculates interest for any amount </p>
       <span onClick={() => window.location.href = "https://ann-getit.github.io/rente-berekening/"}
-      >Bekijk project →</span>
+      >View project →</span>
   </div>
    <div className="project-card">
      <h3>Map</h3>
      <p>A world map built with Leaflet, featuring Dutch train stations added via an external API and JavaScript.</p>
       <span  onClick={() => window.location.href = "https://ann-getit.github.io/landkaart/"}
-      >Bekijk project →</span>
+      >View project →</span>
   </div>
  </div>
 
