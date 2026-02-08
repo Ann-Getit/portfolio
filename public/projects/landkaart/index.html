@@ -78,9 +78,9 @@
         }
 
 // Haal vertrektijden voor één station
-async function getDepartures(UICCode) {
+async function getDepartures() {
     try {
-        const response = await fetch(`/api/vertrektijden?station=${UICCode}`);
+        const response = await fetch(`/api/vertrektijden`);
         const dep = await response.json();
         console.log(dep);
         return dep; // array van vertrektijden
@@ -101,7 +101,7 @@ function showStations(data) {
 
         // Klik op circle → vertrektijden fetchen en popup updaten
         circle.on('click', async () => {
-            const dep = await getDepartures(st.UICCode);
+            const dep = await getDepartures();
 
             const popupContent = dep.length
                 ? dep.map(t => t.vertrekTijd).join("<br>")
