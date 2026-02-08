@@ -118,7 +118,7 @@ function showStations(data) {
             const popupContent = vertrektijden.length
                 ? vertrektijden.slice(0,3).map(t => {
 
-                return `${formatTime(t.plannedDateTime)} ->  ${t.actualDateTime} ${t.direction} (spoor ${t.actualTrack})`;
+                return `${formatTime(t.plannedDateTime)} →  ${t.direction} (spoor ${t.actualTrack ?? "?"})`;
               }).join("<br>")
                 : "Geen vertrektijden beschikbaar";
 
