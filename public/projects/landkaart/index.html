@@ -82,34 +82,18 @@
         function showStations(data)
         {
             console.log(data);
-            for (var st of data) //var st is per station en data (naam kan je veranderen) het gehele data dus alle stations
-            {// data.)
+            for (var st of data) //var st is per station (var naam kan je veranderen) het gehele data van ns api is "data" dus ook alle stations.
+            {
 
-            L.circle([st.lat, st.lng], { radius: 500 }).addTo(map).bindPopup(popup);
+            
             const popup = `
             <div class="station-popup">
                 <div class="station-title">${st.namen.lang}</div>
              Vertrektijden: ${st.heeftVertrektijden}
           `;
+            L.circle([st.lat, st.lng], { radius: 500 }).addTo(map).bindPopup(popup);
             }
         } 
-        //in de bindPopup wil ik de eerste 3 vertektijden per station toevoegen en de tijden moeten matchen met de actuele tijd. 
-        
-             /* $.ajax({
-            url: 'https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/stations?limit=10',
-            method: "GET",
-            headers: {
-              "Ocp-Apim-Subscription-Key": "",
-              "Cache-Control": "no-cache"
-         }, //env.???
-            success: function(data) {
-                console.log(data); 
-            showStations(data);
-            },
-            error: function(err) {
-                console.error(err);
-            }
-        });*/
     </script>
 </head>
 <body onload="initialize()">
