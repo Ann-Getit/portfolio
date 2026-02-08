@@ -2,7 +2,7 @@ export default async function handler(req, res) {
   try {
 
     const response = await fetch(
-      `https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/departures`,
+      `https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/departures?station=${UICCode}`,
       {
         headers: {
           "Ocp-Apim-Subscription-Key": process.env.NSV_API_KEY
