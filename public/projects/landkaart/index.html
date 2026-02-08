@@ -77,11 +77,11 @@
             $.getJSON("/api/stations", showStations);
         }
 
-// Haal vertrektijden voor één station
+// Haal vertrektijden voor één station. UICCode is de code van het station bijv AMS
 async function getDepartures(UICCode) {
     try {
         const vertrektijden = await fetch(`/api/vertrektijden?station=${UICCode}`)
-        .then(res => res.json());
+        .then(res => res.json());// van json naar js  formaat
         console.log(vertrektijden);
         return vertrektijden; // array van vertrektijden. vertrektijden
     } catch (err) {
@@ -89,7 +89,7 @@ async function getDepartures(UICCode) {
         return [];
     }
     
-}
+} // dit doet het goed!
 
 //de NS API geeft tijden zo: 2026-02-08T21:24:00+01:00. dit maakt ze: 12:23 :
 function formatTime(dateString) {
@@ -115,7 +115,7 @@ function showStations(data) {
         circle.on('click', async () => {
             const vertrektijden = await getDepartures(st.UICCode);
 
-            const popupContent = vertrektijden.departures
+            const popupContent = vertrektijden.lenght
                 ? vertrektijden.slice(0,3).map(t => {
                 return `${t.actualDateTime} → ${t.direction} (spoor ${t.actualTrack})`;
               }).join("<br>")
