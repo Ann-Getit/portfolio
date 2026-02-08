@@ -113,7 +113,7 @@ function showStations(data) {
 
         // Klik op circle → vertrektijden fetchen en popup updaten
         circle.on('click', async () => {
-            const vertrektijden = await getDepartures(UICCode);
+            const vertrektijden = await getDepartures(st.UICCode);
 
             const popupContent = vertrektijden.departures
                 ? vertrektijden.slice(0,3).map(t => {
