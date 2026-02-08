@@ -82,7 +82,7 @@ async function getDepartures(UICCode) {
     try {
         const vertrektijden = await fetch(`/api/vertrektijden?station=${UICCode}`)
         .then(res => res.json());
-        console.log(Departures);
+        console.log(vertrektijden);
         return vertrektijden; // array van vertrektijden. vertrektijden
     } catch (err) {
         console.error("Fout bij ophalen vertrektijden:", err);
