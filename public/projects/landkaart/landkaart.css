@@ -2,3 +2,9 @@ body {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
 }
+
+.station-title {
+    font-weight: bold;
+    border-bottom: 2px solid lightpink;
+    padding-bottom: 4px;
+}

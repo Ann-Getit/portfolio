@@ -84,10 +84,13 @@
             console.log(data);
             for (var st of data) //var st is per station en data (naam kan je veranderen) het gehele data dus alle stations
             {// data.)
-              L.circle([st.lat, st.lng], { radius: 500 }).addTo(map).bindPopup(`
-             <strong>${st.namen.lang}</strong><br>
-             
-          `);
+
+            L.circle([st.lat, st.lng], { radius: 500 }).addTo(map).bindPopup(popup);
+            const popup = `
+            <div class="station-popup">
+                <div class="station-title">${st.namen.lang}</div>
+             Vertrektijden: ${st.heeftVertrektijden}
+          `;
             }
         } 
         //in de bindPopup wil ik de eerste 3 vertektijden per station toevoegen en de tijden moeten matchen met de actuele tijd. 
