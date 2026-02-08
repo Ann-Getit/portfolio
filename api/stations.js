@@ -9,9 +9,20 @@ export default async function handler(req, res) {
       }
     );
 
+
+
     const data = await response.json();
 
-    res.status(200).json(data.payload);
+
+    const simplified = data.payload.map(station => ({
+    name: station.namen.lang,
+    lat: station.lat,
+    lng: station.lng,
+    UICCode: station.code || station.UICCode
+}));
+
+
+    res.status(200).json(simplified);
 
   } catch (error) {
     res.status(500).json({ error: error.toString() });
