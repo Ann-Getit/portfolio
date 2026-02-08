@@ -87,10 +87,12 @@ async function getDepartures(UICCode) {
         console.error("Fout bij ophalen vertrektijden:", err);
         return [];
     }
+    console.log(dep);
 }
 
 // Stations tekenen op de kaart
 function showStations(data) {
+    console.log(data);
     for (const st of data) {
         const circle = L.circle([st.lat, st.lng], { radius: 500 })
             .addTo(map)
