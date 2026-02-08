@@ -79,9 +79,12 @@
 
 
 
-        function showStations(data) {
+        function showStations(data, vertrektijden) {
+
             console.log(data);
+
     for (const st of data) {
+
         const circle = L.circle([st.lat, st.lng], { radius: 500 })
             .addTo(map)
             .bindPopup(`<strong>${st.namen.lang}</strong><br>Klik voor vertrektijden`);
@@ -89,7 +92,7 @@
         circle.on('click', async () => {
             const dep = await fetch(`/api/vertrektijden?station=${st.UICCode}`)
                 .then(r => r.json());
-                console.log(vertrektijden);
+                console.log(dep);
             
             const popupContent = `
                 <strong>${st.namen.lang}</strong><br>
@@ -99,8 +102,6 @@
         });
     }
 }
-
-$.getJSON("/api/stations", showStations);
 
 
 
