@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <link rel="stylesheet" href="landkaart.css">
+
+
+    <style>
+    
+        #map {
+            height: 500px;
+        }
+
+        button {
+            background-color: pink;
+            margin: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: rgb(209, 139, 151);
+            color: whitesmoke;
+        }
+
+
+    </style>
+
+    <script>
+            //Globale variabele: mop kan ik alle functies gebruiken worden
+
+        var map;
+
+
+        function initialize()
+        { //scope: mapobject word zichtbaar.
+         map = L.map('map').setView([52, 5], 7); 
+
+         //openstreetmap word
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+         attribution: 'AET 2025'
+         }).addTo(map);
+
+        L.marker([52, 5]).addTo(map)
+         .bindPopup('Een rotonde vlak bij Utrecht')
+         .openPopup();
+
+         L.marker([18.588783206512232, -68.42033038895468]).addTo(map).bindPopup('Punta Cana'); //de coordinatoren vind je terug op google map. click de plek en dan rechter klik.
+
+         L.marker([52.06275232036461, 4.297458493109473]).addTo(map).bindPopup('Den haag');
+        }
+
+        function flyToPuntaCana()
+        {
+            map.flyTo([18.588783206512232, -68.42033038895468], 15);
+        }
+
+        function flyToAmsterdam()
+        {
+            var amsterdam = [52.3676, 4.9041]; // Latitude, Longitude
+             map.flyTo(amsterdam, 15); // 15 = zoom level
+        }
+
+        function getStations() {
+
+            $.getJSON("/api/stations", showStations);
+        }
+     
+
+
+        function showStations(data)
+        {
+            console.log(data);
+            for (var st of data) //var st is per station en data (naam kan je veranderen) het gehele data dus alle stations
+            {// data.)
+              L.circle([st.lat, st.lng], { radius: 500 }).addTo(map).bindPopup(`
+             <strong>${st.namen.lang}</strong><br>
+          `);
+            }
+        }      
+        
+        
+             /* $.ajax({
+            url: 'https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/stations?limit=10',
+            method: "GET",
+            headers: {
+              "Ocp-Apim-Subscription-Key": "",
+              "Cache-Control": "no-cache"
+         }, //env.???
+            success: function(data) {
+                console.log(data); 
+            showStations(data);
+            },
+            error: function(err) {
+                console.error(err);
+            }
+        });*/
+    </script>
+</head>
+<body onload="initialize()">
+
+
+    <h1>landkaart</h1>
+
+    <div id="map"></div>
+
+    <button onclick="flyToPuntaCana()">Punta Cana</button>
+
+    <button onclick="flyToAmsterdam()">Vlieg naar Amsterdam</button>
+
+    <button onclick="getStations()">Treinstations</button>
+
+
+    
+</body>
+</html>
+
+
+

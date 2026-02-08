@@ -93,7 +93,7 @@ const Project = () => {
    <div className="project-card">
      <h3>Map</h3>
      <p>A world map built with Leaflet, featuring Dutch train stations added via an external API and JavaScript.</p>
-      <span  onClick={() => window.location.href = "https://ann-getit.github.io/landkaart/"}
+      <span  onClick={() => window.location.href = "/projects/landkaart/index.html"}
       >View project →</span>
   </div>
  </div>
