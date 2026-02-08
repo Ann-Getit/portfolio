@@ -77,35 +77,41 @@
             $.getJSON("/api/stations", showStations);
         }
 
+// Haal vertrektijden voor één station
+async function getDepartures(UICCode) {
+    try {
+        const response = await fetch(`/api/vertrektijden?station=${UICCode}`);
+        const dep = await response.json();
+        return dep; // array van vertrektijden
+    } catch (err) {
+        console.error("Fout bij ophalen vertrektijden:", err);
+        return [];
+    }
+}
 
-
-        function showStations(data, vertrektijden) {
-
-            console.log(data);
-
+// Stations tekenen op de kaart
+function showStations(data) {
     for (const st of data) {
-
         const circle = L.circle([st.lat, st.lng], { radius: 500 })
             .addTo(map)
             .bindPopup(`<strong>${st.namen.lang}</strong><br>Klik voor vertrektijden`);
 
+        // Klik op circle → vertrektijden fetchen en popup updaten
         circle.on('click', async () => {
-            const dep = await fetch(`/api/vertrektijden?station=${st.UICCode}`)
-                .then(r => r.json());
-                console.log(dep);
-            
-            const popupContent = `
-                <strong>${st.namen.lang}</strong><br>
-                ${dep.map(t => `${t.richting} - ${t.vertrekTijd} - spoor ${t.spoor}`).join("<br>")}
-            `;
-            circle.bindPopup(popupContent).openPopup();
+            const dep = await getDepartures(st.UICCode);
+
+            const popupContent = dep.length
+                ? dep.map(t => t.vertrekTijd).join("<br>")
+                : "Geen vertrektijden beschikbaar";
+
+            circle.bindPopup(`<strong>${st.namen.lang}</strong><br>${popupContent}`)
+                  .openPopup();
         });
     }
 }
 
 
 
-     
 
 
 
@@ -129,8 +135,16 @@
         {
            
             console.log(data);
+
+             const v = 
+             then =>
+            console.log(vertrektijden); 
+
             for (var st of data) //var st is per station (var naam kan je veranderen) het gehele data van ns api is "data" dus ook alle stations.
             {
+
+             
+
             const popup = `
             <div class="station-popup">
             <div class="station-title">${st.namen.lang}</div>
@@ -138,18 +152,12 @@
           `;
 
           L.circle([st.lat, st.lng], { radius: 500 }).addTo(map).bindPopup(popup);
-
-            L.on('click', async () => {
-            const dep = await fetch(`/api/vertrektijden?station=${st.UICCode}`)
-                .then(r => r.json());
-                console.log(vertrektijden);
-
             
-
-
-            });
             }
         } */
+
+
+
     </script>
 </head>
 <body onload="initialize()">
