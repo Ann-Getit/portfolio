@@ -82,12 +82,13 @@ async function getDepartures(UICCode) {
     try {
         const response = await fetch(`/api/vertrektijden?station=${UICCode}`);
         const dep = await response.json();
+        console.log(dep);
         return dep; // array van vertrektijden
     } catch (err) {
         console.error("Fout bij ophalen vertrektijden:", err);
         return [];
     }
-    console.log(dep);
+    
 }
 
 // Stations tekenen op de kaart
