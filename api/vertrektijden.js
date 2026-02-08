@@ -19,7 +19,7 @@ export default async function handler(req, res) {
 
     
 
-    res.status(200).json(vertrektijden.payload || vertrektijden);
+    res.status(200).json(vertrektijden.departures || []);
 
   } catch (error) {
     res.status(500).json({ error: error.toString() });

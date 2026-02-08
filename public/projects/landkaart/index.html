@@ -80,10 +80,10 @@
 // Haal vertrektijden voor één station
 async function getDepartures(UICCode) {
     try {
-        const response = await fetch(`/api/vertrektijden?station=${UICCode}`);
-        const dep = await response.json();
-        console.log(dep);
-        return dep; // array van vertrektijden
+        const vertrektijden = await fetch(`/api/vertrektijden?station=${UICCode}`)
+        .then(res => res.json());
+        console.log(vertrektijden);
+        return vertrektijden; // array van vertrektijden. vertrektijden
     } catch (err) {
         console.error("Fout bij ophalen vertrektijden:", err);
         return [];
@@ -113,10 +113,10 @@ function showStations(data) {
 
         // Klik op circle → vertrektijden fetchen en popup updaten
         circle.on('click', async () => {
-            const dep = await getDepartures(st.UICCode);
+            const vertrektijden = await getDepartures(st.UICCode);
 
-            const popupContent = dep.length
-                ? dep.slice(0,3).map(t => {
+            const popupContent = vertrektijden.length
+                ? vertrektijden.slice(0,3).map(t => {
                 const time = formatTime(t.actualDateTime || t.plannedDateTime);
                 const bestemming = t.recognizableDestination?.name || t.direction;
                 const spoor = t.actualTrack || t.plannedTrack || "?";
