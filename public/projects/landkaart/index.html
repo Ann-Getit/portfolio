@@ -91,6 +91,18 @@ async function getDepartures(UICCode) {
     
 }
 
+//de NS API geeft tijden zo: 2026-02-08T21:24:00+01:00. dit maakt ze: 12:23 :
+function formatTime(dateString) {
+    if (!dateString) return "?";
+
+    const d = new Date(dateString);
+    return d.toLocaleTimeString('nl-NL', {
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+}
+
+
 // Stations tekenen op de kaart
 function showStations(data) {
     console.log(data);
@@ -104,7 +116,11 @@ function showStations(data) {
             const dep = await getDepartures(st.UICCode);
 
             const popupContent = dep.length
-                ? dep.map(t => `${t.vertrekTijd} - ${t.richting} - spoor ${t.spoor}`).join("<br>")
+                ? dep.slice(0,3).map(t => {
+                const time = formatTime(t.actualDateTime || t.plannedDateTime);
+                const spoor = t.actualTrack || t.plannedTrack || "?";
+                return `${time} → ${t.direction} (spoor ${t.spoor})`;
+              }).join("<br>")
                 : "Geen vertrektijden beschikbaar";
 
             circle.bindPopup(`<strong>${st.name}</strong><br>${popupContent}`)
