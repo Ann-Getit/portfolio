@@ -81,7 +81,7 @@
 
         function showStations(data)
         {
-            console.log(data);
+            //console.log(data);
             for (var st of data) //var st is per station en data (naam kan je veranderen) het gehele data dus alle stations
             {// data.)
               L.circle([st.lat, st.lng], { radius: 500 }).addTo(map).bindPopup(`
