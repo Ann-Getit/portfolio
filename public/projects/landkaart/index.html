@@ -78,30 +78,77 @@
         }
 
 
+
+        function showStations(data) {
+            console.log(data);
+    for (const st of data) {
+        const circle = L.circle([st.lat, st.lng], { radius: 500 })
+            .addTo(map)
+            .bindPopup(`<strong>${st.namen.lang}</strong><br>Klik voor vertrektijden`);
+
+        circle.on('click', async () => {
+            const dep = await fetch(`/api/vertrektijden?station=${st.UICCode}`)
+                .then(r => r.json());
+                console.log(vertrektijden);
+            
+            const popupContent = `
+                <strong>${st.namen.lang}</strong><br>
+                ${dep.map(t => `${t.richting} - ${t.vertrekTijd} - spoor ${t.spoor}`).join("<br>")}
+            `;
+            circle.bindPopup(popupContent).openPopup();
+        });
+    }
+}
+
+$.getJSON("/api/stations", showStations);
+
+
+
      
 
 
-        function showStations(data)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*function showStations(data)
         {
            
             console.log(data);
             for (var st of data) //var st is per station (var naam kan je veranderen) het gehele data van ns api is "data" dus ook alle stations.
             {
-
-             circle.on('click', async () => {
-            const dep = await fetch(`/api/vertrektijden?station=${st.UICCode}`)
-                .then(r => r.json());
-                console.log(vertrektijden);
-             
             const popup = `
             <div class="station-popup">
             <div class="station-title">${st.namen.lang}</div>
             <div class="tijden"></div>
           `;
-            L.circle([st.lat, st.lng], { radius: 500 }).addTo(map).bindPopup(popup);
+
+          L.circle([st.lat, st.lng], { radius: 500 }).addTo(map).bindPopup(popup);
+
+            L.on('click', async () => {
+            const dep = await fetch(`/api/vertrektijden?station=${st.UICCode}`)
+                .then(r => r.json());
+                console.log(vertrektijden);
+
+            
+
+
             });
             }
-        } 
+        } */
     </script>
 </head>
 <body onload="initialize()">
