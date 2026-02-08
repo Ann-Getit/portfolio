@@ -115,7 +115,7 @@ function showStations(data) {
         circle.on('click', async () => {
             const vertrektijden = await getDepartures(UICCode);
 
-            const popupContent = vertrektijden.length
+            const popupContent = vertrektijden.departures
                 ? vertrektijden.slice(0,3).map(t => {
                 return `${t.actualDateTime} → ${t.direction} (spoor ${t.actualTrack})`;
               }).join("<br>")
