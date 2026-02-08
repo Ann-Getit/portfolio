@@ -113,14 +113,11 @@ function showStations(data) {
 
         // Klik op circle → vertrektijden fetchen en popup updaten
         circle.on('click', async () => {
-            const vertrektijden = await getDepartures(st.UICCode);
+            const vertrektijden = await getDepartures(UICCode);
 
             const popupContent = vertrektijden.length
                 ? vertrektijden.slice(0,3).map(t => {
-                const time = formatTime(t.actualDateTime || t.plannedDateTime);
-                const bestemming = t.recognizableDestination?.name || t.direction;
-                const spoor = t.actualTrack || t.plannedTrack || "?";
-                return `${time} → ${bestemming} (spoor ${spoor})`;
+                return `${t.actualDateTime} → ${t.direction} (spoor ${t.actualTrack})`;
               }).join("<br>")
                 : "Geen vertrektijden beschikbaar";
 
