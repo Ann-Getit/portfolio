@@ -45,25 +45,25 @@
 
         function initialize()
         { //scope: mapobject word zichtbaar.
-         map = L.map('map').setView([52, 5], 7); 
+         map = L.map('map').setView([52.38020147295795, 4.892925143214285], 7);
 
          //openstreetmap word
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
          attribution: 'AET 2025'
          }).addTo(map);
 
-        L.marker([52, 5]).addTo(map)
-         .bindPopup('Een rotonde vlak bij Utrecht')
+        L.marker([52.38020147295795, 4.892925143214285]).addTo(map)
+         .bindPopup('stad van Nederland')
          .openPopup();
 
-         L.marker([18.588783206512232, -68.42033038895468]).addTo(map).bindPopup('Punta Cana'); //de coordinatoren vind je terug op google map. click de plek en dan rechter klik.
+         L.marker([35.7198981319163, 139.7351590127453]).addTo(map).bindPopup('Tokyo'); //de coordinatoren vind je terug op google map. click de plek en dan rechter klik.
 
          L.marker([52.06275232036461, 4.297458493109473]).addTo(map).bindPopup('Den haag');
         }
 
-        function flyToPuntaCana()
+        function flyToTokyo()
         {
-            map.flyTo([18.588783206512232, -68.42033038895468], 15);
+            map.flyTo([35.7198981319163, 139.7351590127453], 15);
         }
 
         function flyToAmsterdam()
@@ -103,7 +103,7 @@
 
     <div id="map"></div>
 
-    <button onclick="flyToPuntaCana()">Punta Cana</button>
+    <button onclick="flyToTokyo()">Tokyo</button>
 
     <button onclick="flyToAmsterdam()">Vlieg naar Amsterdam</button>
 
