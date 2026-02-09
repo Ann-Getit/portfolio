@@ -109,9 +109,7 @@ function showStations(data) {
     for (const st of data) {
         const circle = L.circle([st.lat, st.lng], { radius: 500 })
             .addTo(map)
-            .bindPopup(`
-            <div class="container"><strong>${st.name}</strong><br>Klik voor vertrektijden</div>
-            `);
+            .bindPopup(`<strong>${st.name}</strong><br>Klik voor vertrektijden`);
 
         // Klik op circle → vertrektijden fetchen en popup updaten
         circle.on('click', async () => {
@@ -124,8 +122,10 @@ function showStations(data) {
               }).join("<br>")
                 : "Geen vertrektijden beschikbaar";
 
-            circle.bindPopup(`<strong>${st.name}</strong><br>${popupContent}`)
-                .openPopup();
+            circle.bindPopup(`<div class="container"><strong>${st.name}</strong><br>${popupContent}
+            </div>
+            `)
+             .openPopup();
         });
     }
 }

@@ -4,7 +4,6 @@ body {
 }
 
 .container {
-    font-weight: bold;
-    border-bottom: 2px solid lightpink;
-    padding-bottom: 4px;
+    border-top: 2px solid lightpink;
+    padding-top: 4px;
 }
