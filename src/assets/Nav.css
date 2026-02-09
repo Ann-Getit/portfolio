@@ -58,6 +58,7 @@ html {
   position: sticky;
   top: 1rem;
   z-index: 1005;
+  overflow: visible;
   margin: 0 auto;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px); /* Safari */
@@ -122,49 +123,6 @@ html {
 
 }
                                                                                                                     
-/* Dropdown container dit aanpassen  */
-.dropdown {
-  position: relative; 
-}
-
-
-
-
-
-
- /*  link "WORK" >   */
-.dropbtn {
-  cursor: pointer;
-  color: white;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-}
-.dropbtn:hover { /*  link "WORK" >   */
-color: rgba(255, 255, 255, 0.582);
-}
-
-
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: black;
-  height: 45px;/*dit toegevoegd*/
-  padding-top: 15px;/*dit toegevoegd*/
-  margin-top: 5px;/*dit toegevoegd*/
-  min-width: 110px;
-  border-radius: 5px;
-  z-index: 1000;
-}
-
-
-
-/* Show on hover (desktop) */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
 
 
 
@@ -229,24 +187,4 @@ color: rgba(255, 255, 255, 0.582);
     transform: translateX(0);
   }  
 }
-
-
-
-/*.menu {  MENU ??
-   list-style: none;
-  display: flex;
-  gap: 2rem;
-}*/
-/*
-.menu li {  MENU ??
-  position: relative;
-  cursor: pointer;
-}*/
-
-
-/*
-h1 {  h1 ????????
-  font-size: 35px;
-}*/
-
 /*---------------------------------          --------------  ------------------*/
