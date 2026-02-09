@@ -122,8 +122,9 @@ function showStations(data) {
               }).join("<br>")
                 : "Geen vertrektijden beschikbaar";
 
-            circle.bindPopup(`<div class="container"><strong>${st.name}</strong><br>${popupContent}
-            </div>
+            circle.bindPopup(`
+            <div class="container"><strong>${st.name}</strong></div><br>
+            <div class="container2">${popupContent}</div>
             `)
              .openPopup();
         });
