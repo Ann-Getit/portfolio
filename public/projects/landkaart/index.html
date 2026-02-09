@@ -109,7 +109,9 @@ function showStations(data) {
     for (const st of data) {
         const circle = L.circle([st.lat, st.lng], { radius: 500 })
             .addTo(map)
-            .bindPopup(`<strong>${st.name}</strong><br>Klik voor vertrektijden`);
+            .bindPopup(`
+            <div class="container"><strong>${st.name}</strong><br>Klik voor vertrektijden</div>
+            `);
 
         // Klik op circle → vertrektijden fetchen en popup updaten
         circle.on('click', async () => {
