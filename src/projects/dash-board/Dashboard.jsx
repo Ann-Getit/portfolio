@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import "./dashboard.css";
+import "./Dashboard.css";
 
 import invoicesData from "./invoices.json";
 import Customer from "./Customers";
