@@ -1,0 +1,36 @@
+.stats {
+  display: grid;
+  place-content: space-between;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin-bottom: 30px;
+  width: auto;
+  height: auto;
+  gap: 10px;
+}
+
+
+.card { /* positioneren met grid*/
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+
+  
+  background: #1f2937;
+  color: white;
+
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 100px;
+  min-height: 150px;
+}
+
+.card h3 {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.card p {
+  font-size: 24px;
+  font-weight: bold;
+}
+

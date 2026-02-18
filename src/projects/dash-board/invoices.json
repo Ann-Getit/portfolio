@@ -1,0 +1,68 @@
+{
+  "invoices": [
+  {
+    "id": 1,
+    "customer": "Van Dijk BV",
+    "country": "NL",
+    "amount": 1250,
+    "vatRate": 21,
+    "date": "2025-12-03",
+    "status": "Open"
+  },
+  {
+    "id": 2,
+    "customer": "Berlin Tech GmbH",
+    "country": "DE",
+    "amount": 2400,
+    "vatRate": 0,
+    "date": "2025-12-10",
+    "status": "Open"
+  },
+  {
+    "id": 3,
+    "customer": "Lefevre SARL",
+    "country": "FR",
+    "amount": 890,
+    "vatRate": 0,
+    "date": "2025-11-21",
+    "status": "Paid"
+  },
+  {
+    "id": 4,
+    "customer": "Jansen Holding",
+    "country": "NL",
+    "amount": 540,
+    "vatRate": 21,
+    "date": "2025-12-01",
+    "status": "Paid"
+  },
+  {
+    "id": 5,
+    "customer": "John Doe",
+    "country": "NL",
+    "amount": 1540,
+    "vatRate": 21,
+    "date": "2026-01-14",
+    "status": "Paid"
+  },
+  {
+    "id": 6,
+    "customer": "John Doe",
+    "country": "NL",
+    "amount": 840,
+    "vatRate": 21,
+    "date": "2026-01-14",
+    "status": "Paid"
+  },
+    {
+    "id": 7,
+    "customer": "Marie Ann",
+    "country": "DE",
+    "amount": 1999,
+    "vatRate": 0,
+    "date": "2026-01-18",
+    "status": "Open"
+  }
+
+]
+}

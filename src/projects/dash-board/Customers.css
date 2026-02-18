@@ -1,0 +1,17 @@
+.customers-filter {
+    background-color: rgb(189, 148, 227, 0.614 );
+    border-radius: 50px;
+    padding: 10px 0 ;
+    width: 200px;
+    
+}
+
+label {
+    font-weight: bold;
+    padding: 10px;
+
+}
+
+select {
+margin: 10px;
+}

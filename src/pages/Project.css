@@ -9,8 +9,6 @@
   color: rgba(255, 255, 255, 0.582)
 }
 
-
-
  
 .page .nav-links.mobile li { 
   color: white; 
@@ -22,29 +20,6 @@
 .page .nav-links.mobile li:hover {
   color: rgba(255, 255, 255, 0.582);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -110,6 +85,7 @@
 
 .project-card h3 {
   margin: 0 0 10px;
+  text-align: center;
 }
 
 .project-card p {
@@ -125,6 +101,19 @@
  span {
   cursor: pointer;
 }
+a {
+  
+  text-decoration: none;
+}
+
+.dashParagr {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+.project-card a:hover {
+  font-weight: bolder;
+}
+
 .project-card span:hover {
   font-weight: bolder;
 }

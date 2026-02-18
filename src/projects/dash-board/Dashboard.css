@@ -1,0 +1,19 @@
+
+.dashB {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.dropdowns {
+  display: flex;
+  margin: 60px;
+  gap: 20px;
+
+
+  justify-content: center;
+}
+
+
+

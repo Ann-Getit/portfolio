@@ -1,9 +1,8 @@
 import { useState } from "react";
 /*import { Link } from 'react-router-dom';*/ /**kan je nog gebruiken als je interne links binnen Project wilt,  */
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "../pages/Project.css";
 import "../assets/Nav.css";
-
 
 
 
@@ -96,22 +95,15 @@ const Project = () => {
       <span  onClick={() => window.location.href = "/projects/landkaart/index.html"}
       >View project →</span>
   </div>
+  <div className="project-card">
+    <h3>Dashboard</h3>
+     <p className="dashParagr"> An interactive dashboard showing filtered invoices. Tool is built with HTML, CSS, JavaScript and JSON using React.  </p>
+     <Link to="/dash-board">
+      View project →</Link>
+  </div>
+
  </div>
-
-
-{/**. {projects.map(project => (
-  <ProjectCard key={project.id} {...project} />
-))}
-  */}
 </section>
-
-
-
-
-
-
-
-
 </div>
   );
 };

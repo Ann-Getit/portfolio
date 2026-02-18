@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import Project from './pages/Project';
 import useScrollFade from "./useScrollFade";
 import Nav from "./assets/Nav"; 
+import Dashboard from './projects/dash-board/Dashboard';
 
 /*import Hero from './assets/first-pict.jsx';*/
 /*import { ReactComponent as JsIcon } from './js.svg';*/
@@ -36,6 +37,7 @@ function App() {
 
         {/* Project route met aangepaste Nav */}
         <Route path="/project" element={<Project />} />
+        <Route path="/dash-board" element={<Dashboard />} />
      </Routes>
 </main> 
    </Router>
