@@ -46,6 +46,7 @@ tr {
 tr:nth-child(even) { background: #09a609; }
 
 .scroll-hint {
-margin-top: 15px;
+margin-top: 5px;
+padding-bottom: 5px;
   color: rgba(245, 245, 245, 0.26);
 }
