@@ -1,9 +1,9 @@
-import fs from 'fs';
+import fs from 'fs'; //filestystem
 import path from 'path';
 
 export default function handler(req, res) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ reply: 'Method not allowed' });
+    return res.status(405).json({ reply: 'Method not allowed' });// alleen voor lezen?
   }
 
   const { message } = req.body;

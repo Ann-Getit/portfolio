@@ -22,7 +22,9 @@ export default async function handler(req, res) {
 }));
 
 
-    res.status(200).json(simplified);
+    res.status(200).json(simplified); //simplified wordt hier in een parameter geplaatst. 
+    //als je res.json({ simplified }); doet, gebruik je data.simplified in frontend.
+
 
   } catch (error) {
     res.status(500).json({ error: error.toString() });

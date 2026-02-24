@@ -72,9 +72,11 @@
              map.flyTo(amsterdam, 15); // 15 = zoom level
         }
 
+
+
         function getStations() {
 
-            $.getJSON("/api/stations", showStations);
+            $.getJSON("/api/stations", showStations);  //de parameter van showStation is waar de simplified staat als (data)
         }
 
 // Haal vertrektijden voor één station. UICCode is de code van het station bijv AMS
@@ -103,9 +105,10 @@ function formatTime(dateString) {
 }
 
 
-// Stations tekenen op de kaart
+// Stations tekenen op de kaart. //(data) hier is de simplified.
 function showStations(data) {
-    console.log(data);
+    console.log(Array.isArray(data));
+    console.log(data[0]);
     for (const st of data) {
         const circle = L.circle([st.lat, st.lng], { radius: 500 })
             .addTo(map)

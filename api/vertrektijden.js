@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     //vertrektijden is js object met alle data van ns api
     console.log(vertrektijden);
 
-    res.status(200).json(vertrektijden.payload?.departures || []); //als DEPARTURES hiet bestaat geef lege array !
+    res.status(200).json(vertrektijden.payload?.departures || []); //als DEPARTURES hier  bestaat geef lege array !
 
   } catch (error) {
     res.status(500).json({ error: error.toString() });
