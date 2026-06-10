@@ -104,7 +104,7 @@ const Project = () => {
    <div className="project-card">
      <h3>moving balls</h3>
      <p>A fun web animation where you can watch colorful balls move and bounce around the screen, built with HTML, CSS, and JavaScript.</p>
-      <span  onClick={() => window.location.href = "https://github.com/Ann-Getit/web_model.git/"}
+      <span  onClick={() => window.location.href = "https://ann-getit.github.io/web_model/"}
       >View project →</span>
   </div>
 
