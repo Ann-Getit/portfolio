@@ -41,7 +41,7 @@ const Home = () => {
      </div>
 <div className="hero-area-middle">
       <section id="about">
-     <div className="content-box fade-in wave"><p>I work with HTML, CSS, JavaScript using React.</p> 
+     <div className="content-box fade-in wave"><p>I work with React, CSS, and JavaScript.</p> 
      <p>My portfolio includes my first projects as well as the projects i'm currently working on, showing my learning process and growth as a developer.</p>
       
       <p>I started with vanilla Javascript to understand core concepts, and later transitioned to React to build more structure and scalable projects.</p> 

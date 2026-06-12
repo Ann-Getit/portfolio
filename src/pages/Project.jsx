@@ -97,13 +97,13 @@ const Project = () => {
   </div>
   <div className="project-card">
     <h3>Dashboard</h3>
-     <p className="dashParagr"> An interactive dashboard showing filtered invoices. Tool is built with HTML, CSS, JavaScript and JSON using React.  </p>
+     <p className="dashParagr"> An interactive dashboard showing filtered invoices. Tool is built with React, CSS, JavaScript and JSON file.  </p>
      <Link to="/dash-board">
       View project →</Link>
   </div>
    <div className="project-card">
-     <h3>moving balls</h3>
-     <p>A fun web animation where you can watch colorful balls move and bounce around the screen, built with HTML, CSS, and JavaScript.</p>
+     <h3>website Sook restaurant</h3>
+     <p>A responsive website built with React, CSS, and JavaScript. Connected to an external API that fetches and display menu data on the website</p>
       <span  onClick={() => window.location.href = "https://ann-getit.github.io/web_model/"}
       >View project →</span>
   </div>
