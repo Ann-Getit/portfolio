@@ -45,8 +45,7 @@ const Home = () => {
      <p>My portfolio includes my first projects as well as the projects i'm currently working on, showing my learning process and growth as a developer.</p>
       
       <p>I started with vanilla Javascript to understand core concepts, and later transitioned to React to build more structure and scalable projects.</p> 
-     
-     <p id="space">I enjoy experimenting with AI tools to improve my workflow and explore modern development techniques.</p>
+      
      </div>
 
      <div className="content-box">
