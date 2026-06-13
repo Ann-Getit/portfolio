@@ -78,9 +78,9 @@ const Project = () => {
       >View project →</span>
   </div>
    <div className="project-card">
-     <h3>moving balls</h3>
-     <p>A fun web animation where you can watch colorful balls move and bounce around the screen, built with HTML, CSS, and JavaScript.</p>
-      <span  onClick={() => window.location.href = "https://ann-getit.github.io/moving-balls/"}
+     <h3>Tech website</h3>
+     <p>A website with login and signup functionality. Built with HTML, CSS, and JavaScript.</p>
+      <span  onClick={() => window.location.href = "https://ann-getit.github.io/techsite/"}
       >View project →</span>
   </div>
    <div className="project-card">
