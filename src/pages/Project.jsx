@@ -102,6 +102,12 @@ const Project = () => {
       View project →</Link>
   </div>
    <div className="project-card">
+     <h3>Basic & sport website</h3>
+     <p>A responsive website built with React, CSS, and JavaScript. focused on the layouts design and navigation between pages</p>
+      <span  onClick={() => window.location.href = "https://ann-getit.github.io/basic-sport/"}
+      >View project →</span>
+  </div>
+   <div className="project-card">
      <h3>website Sook restaurant</h3>
      <p>A responsive website built with React, CSS, and JavaScript. Connected to an external API that fetches and display menu data on the website</p>
       <span  onClick={() => window.location.href = "https://ann-getit.github.io/web_model/"}
