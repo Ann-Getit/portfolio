@@ -77,12 +77,12 @@ const Project = () => {
       <span onClick={() => window.location.href = "https://ann-getit.github.io/magic8ball/"}
       >View project →</span>
   </div>
-   <div className="project-card">
+  {/*} <div className="project-card">
      <h3>Tech website</h3>
      <p>A website with login and signup functionality. Built with HTML, CSS, and JavaScript.</p>
       <span  onClick={() => window.location.href = "https://ann-getit.github.io/techsite/"}
       >View project →</span>
-  </div>
+  </div>*/}
    <div className="project-card">
      <h3>Interest Calculator</h3>
      <p>A simple calculator built with HTML, CSS and JavaScript to calculates interest for any amount </p>
