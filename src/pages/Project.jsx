@@ -65,12 +65,12 @@ const Project = () => {
 
  <div className="projects-grid">
 
-   <div className="project-card">
+   {/*<div className="project-card">
      <h3>Reactive chatbot</h3>
      <p>An interactive chat application built using vanilla JavaScript, connected to a serverless API for dynamic responses.</p>
       <span  onClick={() => window.location.href = "/projects/chatbot/index.html"}
       >View project →</span>
-  </div>
+  </div>*/}
    <div className="project-card">
      <h3>Magic 8 ball</h3>
      <p>An interactive Magic 8 Ball tool that gives dynamic yes/no answers. </p>
