@@ -3,18 +3,16 @@ import path from 'path';
 /*import { improveResponse } from "./gemini.js";*/
 
 export default async function handler(req, res) {
-    return res.status(200).json({
-    geminiResponse: "Test werkt!!"
-  });
 
-}
-  /*
+
+
+  
   if (req.method !== 'POST') {
     return res.status(405).json({ reply: 'Method not allowed' });// alleen voor lezen. als geen POST is not allowed
   }
 
 /*message word gestuurd naar /api. api zoekt in qa.json (req)*/
-  /*const { message } = req.body;
+const { message } = req.body;
   if (!message) {
     return res.status(400).json({ reply: 'Geen bericht ontvangen' });
   }
@@ -25,7 +23,7 @@ export default async function handler(req, res) {
   const input = message.toLowerCase().trim();
 
   /* res begint hier vanuit de qa.default */
-  /*let reply = qa.default;
+  let reply = qa.default;
 
   for (const intent of qa.intents) {
     if (intent.patterns.some(p => p.toLowerCase() === input)) {
@@ -36,12 +34,12 @@ export default async function handler(req, res) {
  
   try {
   /*hier word reply van qa.jeson gestuurd naar gemini */
- /*const geminiResponse = await improveResponse(message, reply);
+ const geminiResponse = await improveResponse(message, reply);
  console.log("Gemini:", geminiResponse);
 
   res.status(200).json({ geminiResponse }); /*hier word gemini reply door gestuurd naar react voor display*/
 
-  /*} catch (error) {
+  } catch (error) {
     console.error(error);
 
     res.status(500).json({
@@ -49,10 +47,8 @@ export default async function handler(req, res) {
       message: error.message,
     });
 
-  }*/
-
-
-
+  }
+}
 
 
 
