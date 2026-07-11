@@ -4,7 +4,7 @@ import path from 'path';
 
 export default async function handler(req, res) {
     return res.status(200).json({
-    geminiResponse: "Test werkt!"
+    geminiResponse: "Test werkt!!"
   });
 
 }
