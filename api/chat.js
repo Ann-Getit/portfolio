@@ -1,6 +1,6 @@
 import fs from 'fs'; //filestystem
 import path from 'path';
-import { improveResponse } from "./gemini.js";
+import { improveResponse, answerFromKnowledge } from "./gemini.js";
 
 export default async function handler(req, res) {
   
@@ -20,21 +20,33 @@ const { message } = req.body;
   const input = message.toLowerCase().trim();
 
   /* res begint hier vanuit de qa.default */
-  let reply = qa.default;
 
+  let reply = qa.default;
+  let matched = false;
   for (const intent of qa.intents) {
     if (intent.patterns.some(p => p.toLowerCase() === input)) {
       reply = intent.response;
+      matched = true;
       break;
     }
   }
  
   try {
+    if (matched) {
   /*hier word reply van qa.jeson gestuurd naar gemini */
  const geminiResponse = await improveResponse(message, reply);
  console.log("Gemini:", geminiResponse);
 
-  res.status(200).json({ geminiResponse }); /*hier word gemini reply door gestuurd naar react voor display*/
+  return res.status(200).json({ geminiResponse }); /*hier word gemini reply door gestuurd naar react voor display*/
+
+  } else {
+
+    const geminiResponse = await answerFromKnowledge(
+    message,
+    qa
+  );
+  return res.status(200).json({ geminiResponse });
+  }
 
   } catch (error) {
     console.error(error);

@@ -4,10 +4,45 @@ const ai = new GoogleGenAI({
 
     apiKey: process.env.GEMINI_API_KEY,
 });
-console.log(process.env.GEMINI_API_KEY);
+
+
+
+export async function answerFromKnowledge (message, qa) {
+try {
+  const interaction = await ai.interactions.create({
+    model: "gemini-3.5-flash",
+    input: `
+
+    Regels:
+- Verander de inhoud niet.
+- Voeg geen nieuwe informatie toe.
+- Houd het antwoord kort en vriendelijk.
+- Gebruik alleen de aangeleverde informatie.
+- Verzin geen openingstijden, prijzen of beleid.
+
+    Taak:
+    Beantwoord de vraag van de gebruiker
+    met behulp van deze kennisbank.
+
+    Vraag van de gebruiker:
+    ${message}
+
+    Kennisbank:
+    ${JSON.stringify(qa)}
+`});
+return interaction.output_text;
+
+ } catch (error) {
+    console.error("Gemini knowledge error:", error);
+    return "Ik kon helaas geen antwoord vinden.";
+  }
+}
+
+
+
 
 export async function improveResponse(message, reply) {
-    try {
+try {
   const interaction = await ai.interactions.create({
     model: "gemini-3.5-flash",
     input: `
@@ -46,4 +81,6 @@ of iets anders.  */
     return reply;
   }
 }
+
+
 
