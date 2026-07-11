@@ -41,6 +41,11 @@
       "patterns": ["wat zijn de abonnement prijzen?"],
       "response": "basic premium kost €29,99, silver premium kost €39,99 en gold premium kost €59,99. voor meer informatie kunt u onze website bezoeken."
     },
+     {
+     "tag": "questions",
+      "patterns": ["Waar zijn jullie gevestigd?", "Waar zitten jullie locaties?", "Hebben jullie meerdere locaties?", "Waar zitten jullie?", "Welke locaties hebben jullie?"],
+      "response": "wij hebben 3 vestigingen in amsterdam. centrum, west en in noord"
+    },
     {
       "tag": "questions",
       "patterns": ["hoe zeg ik mijn abonnement op?", "waar kan ik mijn abonnement stopzetten"],
