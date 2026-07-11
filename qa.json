@@ -28,23 +28,43 @@
     },
     {
       "tag": "questions",
-      "patterns": ["hoe kan ik mijn wachtwoord resetten?"],
-      "response": "neem hiervoor contact op met 4395838395. je krijgt spoedig een reset mail."
+      "patterns": ["kan ik mijn abonnement wijzigen?"],
+      "response": "u kunt uw abonnement wijzigen op uw account. "
+    },
+     {
+      "tag": "questions",
+      "patterns": ["wat kost een lidmaatschap?", "abonnemnt kosten"],
+      "response": "wij hebben verschillende soorten. basic kost: €29,99, silver premium kost: €39,99 en gold premium kost: €59,99. verdere informatie hierover kunt u op de website vinden"
     },
     {
       "tag": "questions",
-      "patterns": ["kan ik een afspraak maken?"],
-      "response": "ja, dat kan via ......"
+      "patterns": ["hoe zeg ik mijn abonnement op?", "waar kan ik mijn abonnement stopzetten"],
+      "response": "op uw account kunt u uw abonnement opzeggen. lukt dit niet? bel ons gerust op 022200546 of stuur een mail naar basic&sport@example.com."
     },
     {
       "tag": "questions",
-      "patterns": ["wat kost jullie service?"],
-      "response": "al onze prijzen van service en product kun je vinden o...."
+      "patterns": ["hebben jullie personal trainer?", "doen jullie aan personal trainers"],
+      "response": "ja, voor een personal trainer kun je gerust een email naar basicsport@example.com sturen met uw wensen en wij maken spoedig contact met u op voor een passende trainer. "
     },
     {
       "tag": "questions",
-      "patterns": ["waar kan ik mijn afspraak annuleren?"],
-      "response": "annuleren doe je op de ........"
+      "patterns": ["kan ik een proefles of proefweek volgen?", "hebben jullie dagpassen?", "hebben jullie dagpas", "kan ik een proefles volgen"],
+      "response": "wij doen niet aan proefweek. je kunt max 2 dagpassen halen en kunt kiezen om groeplessen te volgen of gym."
+    },
+      {
+      "tag": "questions",
+      "patterns": ["ik ben mijn ledenpas kwijt", "mijn ledenpas ben ik kwijt geraakt", "waar kan ik een nieuwe ledenpas aanvragen?", "kan ik een nieuwe ledenpas aanvragen?"],
+      "response": "u kunt een nieuwe ledenpas aanvragen op uw account. oude ledenpas word meteen geblokkeerd na het aanvragen van een nieuwe pas. houd er rekening mee dat u hiervoor €5 voor moet betalen. "
+    },
+    {
+      "tag": "questions",
+      "patterns": ["hebben jullie wifi?", "kan ik gebruik maken van jullie wifi?"],
+      "response": "bij ons kunt u gebruik maken van wifi, vraag gerust aan de ballie voor het wachtwoord."
+    },
+      {
+      "tag": "questions",
+      "patterns": ["kan ik mijn abonnement pauzeren?", "is het mogelijk om abonnement te pauzeren", "Kan ik mijn abonnement tijdelijk bevriezen?", "Ik wil mijn abonnement bevriezen."],
+      "response": "het is mogelijk om u abonnement te pauzeren op uw account met 1 klik."
     }
   ]
 }
