@@ -1,6 +1,6 @@
 import fs from 'fs'; //filestystem
 import path from 'path';
-/*import { improveResponse } from "./gemini.js";*/
+import { improveResponse } from "./gemini.js";
 
 export default async function handler(req, res) {
 
