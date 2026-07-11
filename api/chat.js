@@ -22,6 +22,8 @@ const { message } = req.body;
   /* res begint hier vanuit de qa.default */
 
   let reply = qa.default;
+
+  
   let matched = false;
   for (const intent of qa.intents) {
     if (intent.patterns.some(p => p.toLowerCase() === input)) {

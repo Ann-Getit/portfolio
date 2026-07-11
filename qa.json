@@ -34,7 +34,12 @@
      {
       "tag": "questions",
       "patterns": ["wat kost een lidmaatschap?", "abonnemnt kosten"],
-      "response": "wij hebben verschillende soorten. basic kost: €29,99, silver premium kost: €39,99 en gold premium kost: €59,99. verdere informatie hierover kunt u op de website vinden"
+      "response": "wij bieden verschillende abonnementen aan. je kunt kiezen uit een Basic abonnement, silver premium en gold premium. Met het Basic abonnement krijg je toegang tot de fitnessruimte. Het silver en gold abonnement biedt extra mogelijkheden zoals groepslessen en persoonlijke begeleiding. voor de actuele prijzen en voorwaarden kunt u onze website bezoeken"
+    },
+    {
+     "tag": "questions",
+      "patterns": ["wat zijn de abonnement prijzen?"],
+      "response": "basic premium kost €29,99, silver premium kost €39,99 en gold premium kost €59,99. voor meer informatie kunt u onze website bezoeken."
     },
     {
       "tag": "questions",

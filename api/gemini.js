@@ -19,10 +19,12 @@ try {
 - Houd het antwoord kort en vriendelijk.
 - Gebruik alleen de aangeleverde informatie.
 - Verzin geen openingstijden, prijzen of beleid.
+- en graag zonder ** beantwoorden.
 
     Taak:
     Beantwoord de vraag van de gebruiker
     met behulp van deze kennisbank.
+    
 
     Vraag van de gebruiker:
     ${message}
@@ -58,6 +60,7 @@ Regels:
 - Houd het antwoord kort en vriendelijk.
 - Gebruik alleen de aangeleverde informatie.
 - Verzin geen openingstijden, prijzen of beleid.
+- - en graag zonder ** beantwoorden.
 
 
 vragen van gebruikers: 
