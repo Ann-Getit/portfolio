@@ -3,9 +3,6 @@ import path from 'path';
 import { improveResponse } from "./gemini.js";
 
 export default async function handler(req, res) {
-
-
-
   
   if (req.method !== 'POST') {
     return res.status(405).json({ reply: 'Method not allowed' });// alleen voor lezen. als geen POST is not allowed
