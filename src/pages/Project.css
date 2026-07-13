@@ -117,3 +117,7 @@ a {
 .project-card span:hover {
   font-weight: bolder;
 }
+
+.sameAsspan {
+  color: white;
+}

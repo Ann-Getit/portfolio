@@ -68,7 +68,7 @@ const Project = () => {
    <div className="project-card">
      <h3>Reactive chatbot</h3>
      <p>An interactive chatbot application built with React, JavaScript, and CSS. It uses a serverless API , combining a local qa.json for knowledge base responses with the Gemini API for AI-generated replies.</p>
-     <Link to="/chatbot">Chatbot</Link>
+     <Link to="/chatbot" className="sameAsspan">View project</Link>
   </div>
    <div className="project-card">
      <h3>Magic 8 ball</h3>
@@ -97,7 +97,7 @@ const Project = () => {
   <div className="project-card">
     <h3>Dashboard</h3>
      <p className="dashParagr"> An interactive dashboard showing filtered invoices. Tool is built with React, CSS, JavaScript and JSON file.  </p>
-     <Link to="/dash-board">
+     <Link to="/dash-board" className="sameAsspan">
       View project →</Link>
   </div>
    <div className="project-card">

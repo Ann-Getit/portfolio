@@ -44,7 +44,7 @@
      {
      "tag": "questions",
       "patterns": ["Waar zijn jullie gevestigd?", "Waar zitten jullie locaties?", "Hebben jullie meerdere locaties?", "Waar zitten jullie?", "Welke locaties hebben jullie?"],
-      "response": "wij hebben 3 vestigingen in amsterdam. centrum, west en in noord"
+      "response": "wij hebben 3 vestigingen in amsterdam . centrum, west en in noord"
     },
     {
       "tag": "questions",
