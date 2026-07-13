@@ -68,7 +68,7 @@ const Project = () => {
    <div className="project-card">
      <h3>Reactive chatbot</h3>
      <p>An interactive chatbot application built with React, JavaScript, and CSS. It uses a serverless API , combining a local qa.json for knowledge base responses with the Gemini API for AI-generated replies.</p>
-     <Link to="/chatbot" className="sameAsspan">View project</Link>
+     <Link to="/chatbot" className="sameAsspan">View project →</Link>
   </div>
    <div className="project-card">
      <h3>Magic 8 ball</h3>
